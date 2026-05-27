@@ -18,6 +18,7 @@ const regionFlagCodes: Record<string, string | null> = {
   "Trinidad y Tobago": "tt",
   "Centroamérica": null,
   "Cuba": "cu",
+  "Jamaica": "jm",
   "Rep. Dominicana y Uruguay": null,
   "Global": null,
   "Asia-Pacífico": null,

@@ -147,6 +147,47 @@ export const projects = [
   //   status: "in_progress" as const,
   // },
   {
+    id: "revision-legislativa-jamaica",
+    title: {
+      es: "Revisión Legislativa sobre Inteligencia Artificial en Jamaica",
+      en: "Legislative Review on Artificial Intelligence in Jamaica",
+    },
+    subtitle: {
+      es: "Análisis del marco legal jamaicano y recomendaciones para una gobernanza responsable de la IA",
+      en: "Analysis of Jamaica's legal framework and recommendations for responsible AI governance",
+    },
+    description: {
+      es: "Revisión integral del marco legal y regulatorio de Jamaica para evaluar su adecuación al desarrollo, despliegue y uso de la IA. El proyecto identifica brechas normativas y entrega recomendaciones específicas para nueva legislación o reformas, alineadas con la Recomendación de UNESCO sobre Ética de la IA, los Principios de la OCDE, la Ley de IA de la UE y la Convención Marco del Consejo de Europa. Incluye sesiones de validación con el National AI Task Force y actores del sector público.",
+      en: "Comprehensive review of Jamaica's legal and regulatory framework to assess its adequacy for AI development, deployment, and use. The project identifies regulatory gaps and delivers specific recommendations for new legislation or amendments, aligned with UNESCO's Recommendation on the Ethics of AI, OECD AI Principles, the EU AI Act, and the Council of Europe Framework Convention. Includes validation sessions with the National AI Task Force and public sector stakeholders.",
+    },
+    client: "UNESCO",
+    year: 2026,
+    region: "Jamaica",
+    type: "policy",
+    status: "in_progress" as const,
+  },
+  {
+    id: "ilia-2026",
+    title: {
+      es: "Ampliación y Actualización ILIA 2026",
+      en: "ILIA 2026 Expansion and Update",
+    },
+    subtitle: {
+      es: "Ampliación del Índice Latinoamericano de IA con Trinidad y Tobago, cinco países de referencia globales y actualización del subindicador de participación ciudadana",
+      en: "Expansion of the Latin American AI Index with Trinidad and Tobago, five global benchmark countries, and update of the citizen participation sub-indicator",
+    },
+    description: {
+      es: "Tercera edición del Índice Latinoamericano de Inteligencia Artificial (ILIA) en la que ampliamos la cobertura del instrumento incorporando a Trinidad y Tobago y a cinco países no latinoamericanos como puntos de referencia internacional. Adicionalmente, actualizamos y refinamos el subindicador de IA para participación ciudadana, profundizando la medición del uso y desarrollo de IA en procesos democráticos en la región.",
+      en: "Third edition of the Latin American Artificial Intelligence Index (ILIA), expanding the instrument's coverage by incorporating Trinidad and Tobago and five non-Latin American countries as international benchmarks. Additionally, we update and refine the AI for citizen participation sub-indicator, deepening the measurement of AI use and development in democratic processes across the region.",
+    },
+    client: "CENIA",
+    year: 2026,
+    region: "Latinoamérica",
+    type: "research",
+    status: "in_progress" as const,
+    externalUrl: "https://indicelatam.cl/",
+  },
+  {
     id: "meta-analisis-ram",
     title: {
       es: "Implementación del Meta-Análisis de las RAM",
@@ -262,7 +303,7 @@ export const projects = [
     yearEnd: 2026,
     region: "El Salvador",
     type: "assessment",
-    status: "in_progress" as const,
+    status: "completed" as const,
     parentProject: "ram-unesco",
   },
   {
@@ -284,7 +325,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Honduras",
     type: "assessment",
-    status: "in_progress" as const,
+    status: "completed" as const,
     parentProject: "ram-unesco",
   },
   {
@@ -327,7 +368,7 @@ export const projects = [
     year: 2025,
     region: "Guatemala",
     type: "assessment",
-    status: "in_progress" as const,
+    status: "completed" as const,
     parentProject: "ram-unesco",
   },
   {
@@ -400,7 +441,7 @@ export const projects = [
     id: "ai-sprinters",
     title: {
       es: "IA que funciona para Hispanoamérica",
-      en: "AI that works for Spanish Speaking Latam",
+      en: "AI Works for Spanish Speaking Latam",
     },
     subtitle: {
       es: "Un reporte de AI Sprinters — Estudio regional que cuantifica el impacto potencial de la IA en 10 economías hispanoamericanas",
