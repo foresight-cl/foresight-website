@@ -1,5 +1,6 @@
 // ISO country codes for flag images (flagcdn.com)
 const regionFlagCodes: Record<string, string | null> = {
+  "Argentina": "ar",
   "Chile": "cl",
   "México": "mx",
   "Camboya": "kh",

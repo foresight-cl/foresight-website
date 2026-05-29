@@ -725,6 +725,90 @@ export const projects = [
     downloadUrl: "/reports/ai-sprinters-mexico-es.pdf",
   },
   {
+    id: "ai-sprinters-argentina",
+    title: {
+      es: "AI Sprinters: Una oportunidad histórica para Argentina",
+      en: "AI Sprinters: A Historic Opportunity for Argentina",
+    },
+    subtitle: {
+      es: "Inteligencia artificial para desatar el potencial económico de Argentina, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence to unlock Argentina's economic potential, part of Google's AI Digital Sprinters series",
+    },
+    description: {
+      es: "Estudio de impacto económico de la IA en Argentina, parte de la serie AI Digital Sprinters de Google. Se estima que la IA podría generar entre USD 23.721 y USD 43.491 millones anuales, equivalentes al 3,7% y 6,7% del PIB.",
+      en: "AI economic impact study for Argentina, part of Google's AI Digital Sprinters series. AI could generate between USD 23.721 and USD 43.491 billion annually, equivalent to 3.7% and 6.7% of GDP.",
+    },
+    client: "Google",
+    year: 2026,
+    region: "Argentina",
+    type: "research" as const,
+    status: "completed" as const,
+    parentProject: "ai-sprinters",
+    featuredStat: {
+      value: "3,7–6,7%",
+      label: { es: "Del PIB de Argentina podría representar el impacto económico de la IA", en: "Of Argentina's GDP could represent AI's economic impact" },
+    },
+    summaryHighlight: {
+      es: "La IA podría generar entre USD 23.721 y USD 43.491 millones anuales, equivalentes al 3,7% y 6,7% del PIB",
+      en: "AI could generate between USD 23.721 and USD 43.491 billion annually, equivalent to 3.7% and 6.7% of GDP",
+    },
+    executiveSummary: {
+      es: "Como la tercera economía más grande de Hispanoamérica, Argentina está bien posicionada para beneficiarse del potencial de la IA. Se estima que la IA podría contribuir entre USD 23.721 y USD 43.491 millones anuales a la economía, equivalentes al 3,7% y 6,7% del PIB. Los sectores con mayor impacto proyectado son la manufactura, el comercio, las actividades inmobiliarias y la agricultura. Sin embargo, la tasa actual de adopción de IA sigue siendo baja (alrededor del 4,2%), lo que reduce el impacto potencial a entre USD 987 y USD 1.809 millones anuales. Esta brecha evidencia la importancia de fomentar la adopción de IA para aprovechar su potencial como motor de crecimiento económico. Este reporte es parte de la serie IA Digital Sprinters de Google.",
+      en: "As Hispanic America's third-largest economy, Argentina is well-positioned to benefit from AI's potential. AI could contribute between USD 23.721 and USD 43.491 billion annually to the economy, equivalent to 3.7% and 6.7% of GDP. The sectors with the highest projected impact are manufacturing, trade, real estate and agriculture. However, the current AI adoption rate remains low (around 4.2%), reducing the potential impact to between USD 0.987 and USD 1.8 billion annually. This gap underscores the importance of promoting AI adoption to leverage its potential as an engine of economic growth. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "$24–43B", label: { es: "USD millones anuales", en: "USD Billion Annual" } },
+      { value: "4,2%", label: { es: "Tasa de adopción de IA", en: "AI Adoption Rate" } },
+      { value: "14", label: { es: "Centros de datos", en: "Data Centers" } },
+    ],
+    pillarsTitle: { es: "Factores Habilitantes", en: "Enabling Factors" },
+    pillarsSubtitle: { es: "Áreas clave del marco Digital Sprinters de Google", en: "Key areas of Google's Digital Sprinters framework" },
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 30 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 15 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 8 },
+      { name: { es: "Agricultura, Ganadería y Pesca", en: "Agriculture, Forestry & Fishing" }, percentage: 6 },
+      { name: { es: "Salud y Asistencia Social", en: "Health & Social Work" }, percentage: 6 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 5 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "Argentina presentó su Plan Nacional de IA en 2019 y el actual gobierno impulsa el desarrollo de la IA con la visión de convertir al país en un hub global. En el Congreso se han presentado más de 40 proyectos de ley relacionados con IA, aunque la mayoría aún carece de consenso. Recomendaciones: consolidar una estrategia nacional de IA de largo plazo con amplio consenso multisectorial, adoptar principios y estándares internacionales (ISO/IEC, IEEE) y revisar las leyes existentes y los proyectos en curso para avanzar hacia un marco normativo único y coherente.",
+          en: "Argentina released its National AI Plan in 2019, and the current government is promoting AI development with the vision of turning the country into a global hub. More than 40 AI-related bills have been introduced in Congress, although most still lack consensus. Recommendations: consolidate a long-term national AI strategy with broad multi-sector consensus, adopt international principles and standards (ISO/IEC, IEEE), and review existing laws and pending bills to move toward a single, coherent regulatory framework.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "La penetración de internet en hogares subió del 82,9% en 2019 al 93,4% en 2023, y en 2025 el país superó el promedio de Hispanoamérica en velocidad de descarga móvil (61,01 Mbps). Argentina cuenta con cinco clústeres de alto desempeño (HPC) y 14 centros de datos, y en diciembre de 2024 presentó un plan nuclear nacional que busca posicionar al país como líder en energía nuclear e IA. Recomendaciones: fomentar la inversión en infraestructura digital y acceso a capacidad de cómputo, promover políticas de Cloud First y mejorar la interoperabilidad de los sistemas, especialmente en salud y educación.",
+          en: "Household internet penetration rose from 82.9% in 2019 to 93.4% in 2023, and in 2025 the country surpassed the Hispanic American average in mobile download speed (61.01 Mbps). Argentina has five high-performance computing (HPC) clusters and 14 data centers, and in December 2024 it unveiled a national nuclear plan aiming to position the country as a leader in nuclear energy and AI. Recommendations: promote investment in digital infrastructure and access to computing capacity, advance Cloud First policies, and improve system interoperability, especially in health and education.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "Argentina invierte cerca del 0,6% de su PIB en I+D y cuenta con un ecosistema emprendedor dinámico: 38 empresas de IA han concretado 87 rondas de inversión por USD 7.135 millones, y el sector agtech destaca con 165 empresas que aplican IA. Sin embargo, solo el 20,4% de las empresas ya utiliza IA, aunque un 44,4% planea adoptarla en el corto plazo. Recomendaciones: impulsar la adopción de IA en sectores productivos estratégicos como agricultura, manufactura, energía y salud, acelerar el uso de IA en empresas estatales (YPF, Arsat, INVAP) y crear centros de excelencia en IA con foco sectorial.",
+          en: "Argentina invests around 0.6% of its GDP in R&D and has a dynamic entrepreneurial ecosystem: 38 AI companies have closed 87 investment rounds totaling USD 7.135 billion, and the agtech sector stands out with 165 companies applying AI. However, only 20.4% of companies already use AI, although 44.4% plan to adopt it in the short term. Recommendations: promote AI adoption in strategic productive sectors such as agriculture, manufacturing, energy and health, accelerate AI use in state-owned companies (YPF, Arsat, INVAP), and create AI centers of excellence with a sectoral focus.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "La concentración de talento en IA se ha duplicado en ocho años y Argentina supera el promedio regional en formación científica temprana y posgrados especializados, con una participación femenina del 24,8% en la investigación en IA. No obstante, el país registró un flujo neto negativo de expertos en IA en 2023, lo que evidencia el desafío de retener talento. Recomendaciones: conectar al talento argentino en el exterior con redes globales mediante mentorías y programas de retorno, formar formadores en habilidades aplicadas de IA y desarrollar sistemas nacionales de certificación de habilidades en IA.",
+          en: "AI talent concentration has doubled in eight years, and Argentina surpasses the regional average in early scientific education and specialized postgraduate training, with women representing 24.8% of AI research. However, the country recorded a net negative flow of AI experts in 2023, highlighting the challenge of retaining talent. Recommendations: connect Argentine talent abroad with global networks through mentorship and return programs, train trainers in applied AI skills, and develop national AI skills certification systems.",
+        },
+      },
+    ],
+    downloadUrl: "/reports/ai-sprinters-argentina-es.pdf",
+    downloadUrlEn: "/reports/ai-sprinters-argentina-en.pdf",
+  },
+  {
     id: "ram-camboya",
     title: {
       es: "Evaluación de Preparación en IA: Camboya",
@@ -1473,6 +1557,76 @@ export const reports = [
       },
     ],
     downloadUrl: "/reports/ai-sprinters-mexico-es.pdf",
+  },
+  {
+    slug: "ai-sprinters-argentina",
+    title: {
+      es: "AI Sprinters: Una oportunidad histórica para Argentina",
+      en: "AI Sprinters: A Historic Opportunity for Argentina",
+    },
+    subtitle: {
+      es: "Inteligencia artificial para desatar el potencial económico de Argentina, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence to unlock Argentina's economic potential, part of Google's AI Digital Sprinters series",
+    },
+    client: "Google",
+    year: 2026,
+    featuredStat: {
+      value: "3,7–6,7%",
+      label: { es: "Del PIB de Argentina podría representar el impacto económico de la IA", en: "Of Argentina's GDP could represent AI's economic impact" },
+    },
+    executiveSummary: {
+      es: "Como la tercera economía más grande de Hispanoamérica, Argentina está bien posicionada para beneficiarse del potencial de la IA. Se estima que la IA podría contribuir entre USD 23.721 y USD 43.491 millones anuales a la economía, equivalentes al 3,7% y 6,7% del PIB. Los sectores con mayor impacto proyectado son la manufactura, el comercio, las actividades inmobiliarias y la agricultura. Sin embargo, la tasa actual de adopción de IA sigue siendo baja (alrededor del 4,2%), lo que reduce el impacto potencial a entre USD 987 y USD 1.809 millones anuales. Esta brecha evidencia la importancia de fomentar la adopción de IA para aprovechar su potencial como motor de crecimiento económico. Este reporte es parte de la serie IA Digital Sprinters de Google.",
+      en: "As Hispanic America's third-largest economy, Argentina is well-positioned to benefit from AI's potential. AI could contribute between USD 23.721 and USD 43.491 billion annually to the economy, equivalent to 3.7% and 6.7% of GDP. The sectors with the highest projected impact are manufacturing, trade, real estate and agriculture. However, the current AI adoption rate remains low (around 4.2%), reducing the potential impact to between USD 0.987 and USD 1.8 billion annually. This gap underscores the importance of promoting AI adoption to leverage its potential as an engine of economic growth. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "3,7–6,7%", label: { es: "Impacto potencial en PIB", en: "Potential GDP Impact" } },
+      { value: "$24–43B", label: { es: "USD millones anuales", en: "USD Billion Annual" } },
+      { value: "4,2%", label: { es: "Tasa de adopción de IA", en: "AI Adoption Rate" } },
+      { value: "14", label: { es: "Centros de datos", en: "Data Centers" } },
+    ],
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 30 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 15 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 8 },
+      { name: { es: "Agricultura, Ganadería y Pesca", en: "Agriculture, Forestry & Fishing" }, percentage: 6 },
+      { name: { es: "Salud y Asistencia Social", en: "Health & Social Work" }, percentage: 6 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 5 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "Argentina presentó su Plan Nacional de IA en 2019 y el actual gobierno impulsa el desarrollo de la IA con la visión de convertir al país en un hub global. En el Congreso se han presentado más de 40 proyectos de ley relacionados con IA, aunque la mayoría aún carece de consenso. Recomendaciones: consolidar una estrategia nacional de IA de largo plazo con amplio consenso multisectorial, adoptar principios y estándares internacionales (ISO/IEC, IEEE) y revisar las leyes existentes y los proyectos en curso para avanzar hacia un marco normativo único y coherente.",
+          en: "Argentina released its National AI Plan in 2019, and the current government is promoting AI development with the vision of turning the country into a global hub. More than 40 AI-related bills have been introduced in Congress, although most still lack consensus. Recommendations: consolidate a long-term national AI strategy with broad multi-sector consensus, adopt international principles and standards (ISO/IEC, IEEE), and review existing laws and pending bills to move toward a single, coherent regulatory framework.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "La penetración de internet en hogares subió del 82,9% en 2019 al 93,4% en 2023, y en 2025 el país superó el promedio de Hispanoamérica en velocidad de descarga móvil (61,01 Mbps). Argentina cuenta con cinco clústeres de alto desempeño (HPC) y 14 centros de datos, y en diciembre de 2024 presentó un plan nuclear nacional que busca posicionar al país como líder en energía nuclear e IA. Recomendaciones: fomentar la inversión en infraestructura digital y acceso a capacidad de cómputo, promover políticas de Cloud First y mejorar la interoperabilidad de los sistemas, especialmente en salud y educación.",
+          en: "Household internet penetration rose from 82.9% in 2019 to 93.4% in 2023, and in 2025 the country surpassed the Hispanic American average in mobile download speed (61.01 Mbps). Argentina has five high-performance computing (HPC) clusters and 14 data centers, and in December 2024 it unveiled a national nuclear plan aiming to position the country as a leader in nuclear energy and AI. Recommendations: promote investment in digital infrastructure and access to computing capacity, advance Cloud First policies, and improve system interoperability, especially in health and education.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "Argentina invierte cerca del 0,6% de su PIB en I+D y cuenta con un ecosistema emprendedor dinámico: 38 empresas de IA han concretado 87 rondas de inversión por USD 7.135 millones, y el sector agtech destaca con 165 empresas que aplican IA. Sin embargo, solo el 20,4% de las empresas ya utiliza IA, aunque un 44,4% planea adoptarla en el corto plazo. Recomendaciones: impulsar la adopción de IA en sectores productivos estratégicos como agricultura, manufactura, energía y salud, acelerar el uso de IA en empresas estatales (YPF, Arsat, INVAP) y crear centros de excelencia en IA con foco sectorial.",
+          en: "Argentina invests around 0.6% of its GDP in R&D and has a dynamic entrepreneurial ecosystem: 38 AI companies have closed 87 investment rounds totaling USD 7.135 billion, and the agtech sector stands out with 165 companies applying AI. However, only 20.4% of companies already use AI, although 44.4% plan to adopt it in the short term. Recommendations: promote AI adoption in strategic productive sectors such as agriculture, manufacturing, energy and health, accelerate AI use in state-owned companies (YPF, Arsat, INVAP), and create AI centers of excellence with a sectoral focus.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "La concentración de talento en IA se ha duplicado en ocho años y Argentina supera el promedio regional en formación científica temprana y posgrados especializados, con una participación femenina del 24,8% en la investigación en IA. No obstante, el país registró un flujo neto negativo de expertos en IA en 2023, lo que evidencia el desafío de retener talento. Recomendaciones: conectar al talento argentino en el exterior con redes globales mediante mentorías y programas de retorno, formar formadores en habilidades aplicadas de IA y desarrollar sistemas nacionales de certificación de habilidades en IA.",
+          en: "AI talent concentration has doubled in eight years, and Argentina surpasses the regional average in early scientific education and specialized postgraduate training, with women representing 24.8% of AI research. However, the country recorded a net negative flow of AI experts in 2023, highlighting the challenge of retaining talent. Recommendations: connect Argentine talent abroad with global networks through mentorship and return programs, train trainers in applied AI skills, and develop national AI skills certification systems.",
+        },
+      },
+    ],
+    downloadUrl: "/reports/ai-sprinters-argentina-es.pdf",
   },
 ];
 

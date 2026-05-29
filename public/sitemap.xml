@@ -41,12 +41,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://foresight.cl/reportes/ai-sprinters-argentina</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://foresight.cl/proyectos/ballerina-ia-generativa</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://foresight.cl/proyectos/revision-legislativa-jamaica</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://foresight.cl/proyectos/ilia-2026</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://foresight.cl/proyectos/meta-analisis-ram</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://foresight.cl/proyectos/ram-unesco</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -71,6 +91,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://foresight.cl/proyectos/ilia-participacion-ciudadana</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://foresight.cl/proyectos/ai-sprinters</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -87,6 +112,11 @@
   </url>
   <url>
     <loc>https://foresight.cl/proyectos/ai-sprinters-mexico</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://foresight.cl/proyectos/ai-sprinters-argentina</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
