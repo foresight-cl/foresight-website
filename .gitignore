@@ -44,6 +44,9 @@ next-env.d.ts
 # audit reports (internal)
 /audit_reports/
 
+# local report archives (large source/original PDFs, kept locally, not for repo)
+/public/reports/archive/
+
 # content guide (internal)
 GUIA_CONTENIDO_SITIO.*
 
