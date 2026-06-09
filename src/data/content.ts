@@ -227,7 +227,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Global",
     type: "assessment" as const,
-    status: "in_progress" as const,
+    status: "completed" as const,
     featured: true,
     featuredOrder: 1,
     featuredStat: { value: "8", label: { es: "Países evaluados", en: "Countries assessed" } },
@@ -347,7 +347,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Panamá",
     type: "assessment",
-    status: "in_progress" as const,
+    status: "completed" as const,
     parentProject: "ram-unesco",
   },
   {
