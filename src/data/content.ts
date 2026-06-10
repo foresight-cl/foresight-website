@@ -1690,7 +1690,7 @@ export const team: TeamMember[] = [
       es: "PhD (c) en Ciencias de la Información, Cornell. Experto en gobernanza y adopción de IA en instituciones públicas y privadas.",
       en: "PhD candidate in Information Science, Cornell. Expert in AI governance and adoption in public and private institutions.",
     },
-    image: "/images/team/jose-guridi.png",
+    image: "/images/team/jose-guridi.jpg",
     linkedin: "https://www.linkedin.com/in/jaguridi/",
     googleScholar: "https://scholar.google.com/citations?user=P5xFVC4AAAAJ&hl=en&oi=ao",
   },
@@ -1713,7 +1713,7 @@ export const team: TeamMember[] = [
       es: "MSc Political Economy (KCL). Jefe de Estudios CENIA, cofundador de Foresight. Consultor para CEPAL, UNESCO, BID y gobiernos.",
       en: "MSc Political Economy (KCL). Head of Research at CENIA, co-founder of Foresight. Consultant for ECLAC, UNESCO, IDB, and governments.",
     },
-    image: "/images/team/Sebastián Adasme.jpg",
+    image: "/images/team/sebastian-adasme.jpg",
     linkedin: "https://www.linkedin.com/in/sebastián-adasme-toro-18465b201/",
   },
   {
