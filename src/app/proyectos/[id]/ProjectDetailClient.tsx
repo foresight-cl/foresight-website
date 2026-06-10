@@ -43,7 +43,7 @@ function SectionDivider() {
 export default function ProjectDetailClient({ id }: { id: string }) {
   const { lang } = useLang();
 
-  const project = projects.find((p) => p.id === id) as any;
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return (
@@ -95,12 +95,12 @@ export default function ProjectDetailClient({ id }: { id: string }) {
   // Related projects: same parentProject, or same client/type
   const relatedProjects = projects
     .filter(
-      (p: any) =>
+      (p) =>
         p.id !== project.id &&
         (
           (project.parentProject && p.id === project.parentProject) ||
-          (project.parentProject && (p as any).parentProject === project.parentProject) ||
-          (!project.parentProject && ((p as any).parentProject === project.id)) ||
+          (project.parentProject && p.parentProject === project.parentProject) ||
+          (!project.parentProject && p.parentProject === project.id) ||
           p.client === project.client ||
           p.type === project.type
         )
@@ -109,22 +109,23 @@ export default function ProjectDetailClient({ id }: { id: string }) {
 
   // Child projects (projects that reference this one as parentProject)
   const childProjects = projects
-    .filter((p: any) => p.parentProject === project.id)
-    .sort((a: any, b: any) => {
+    .filter((p) => p.parentProject === project.id)
+    .sort((a, b) => {
       if (a.status === "in_progress" && b.status !== "in_progress") return -1;
       if (a.status !== "in_progress" && b.status === "in_progress") return 1;
       return b.year - a.year;
     });
 
-  // Rich content flags
-  const hasExecutiveSummary = !!project.executiveSummary;
-  const hasKeyStats = !!project.keyStats?.length;
+  // Rich content
+  const { executiveSummary, downloadUrl, downloadUrlEn, externalUrl } = project;
+  const keyStats = project.keyStats ?? [];
+  const pillars = project.pillars ?? [];
+  const images = project.images ?? [];
+  const hasKeyStats = keyStats.length > 0;
   const hasChildProjects = childProjects.length > 0;
-  const hasSectors = !!project.sectors?.length || !!(project as any).sectorsRangeData?.length;
-  const hasPillars = !!project.pillars?.length;
-  const hasDownload = !!project.downloadUrl;
-  const hasExternalUrl = !!project.externalUrl;
-  const hasImages = !!project.images?.length;
+  const hasSectors = !!project.sectors?.length || !!project.sectorsRangeData?.length;
+  const hasPillars = pillars.length > 0;
+  const hasImages = images.length > 0;
 
   return (
     <div className="pt-20">
@@ -264,7 +265,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
       </section>
 
       {/* Executive Summary */}
-      {hasExecutiveSummary && (
+      {executiveSummary && (
         <section className="section-padding">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -284,7 +285,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                 </div>
               )}
               <p className="text-lg text-slate-600 leading-relaxed">
-                {project.executiveSummary[lang]}
+                {executiveSummary[lang]}
               </p>
             </motion.div>
           </div>
@@ -298,8 +299,8 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             <SectionHeading
               title={lang === "es" ? "Cifras Clave" : "Key Figures"}
             />
-            <div className={`grid grid-cols-2 ${project.keyStats.length <= 3 ? "md:grid-cols-3" : "md:grid-cols-4"} gap-6`}>
-              {project.keyStats.map((stat: any, index: number) => (
+            <div className={`grid grid-cols-2 ${keyStats.length <= 3 ? "md:grid-cols-3" : "md:grid-cols-4"} gap-6`}>
+              {keyStats.map((stat, index) => (
                 <StatCard
                   key={stat.label[lang]}
                   value={stat.value}
@@ -322,19 +323,19 @@ export default function ProjectDetailClient({ id }: { id: string }) {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               title={
-                (project as any).sectorsTitle?.[lang] ??
+                project.sectorsTitle?.[lang] ??
                 (lang === "es" ? "Impacto por Sector" : "Impact by Sector")
               }
               subtitle={
-                (project as any).sectorsSubtitle?.[lang] ??
+                project.sectorsSubtitle?.[lang] ??
                 (lang === "es"
                   ? "Distribución del potencial de impacto de IA por sector económico"
                   : "Distribution of AI impact potential by economic sector")
               }
             />
-            {(project as any).sectorsType === "range" ? (
+            {project.sectorsRangeData?.length ? (
               <RangeBarChart
-                data={(project as any).sectorsRangeData.map((s: any) => ({
+                data={project.sectorsRangeData.map((s) => ({
                   name: s.name[lang],
                   low: s.low,
                   high: s.high,
@@ -345,12 +346,12 @@ export default function ProjectDetailClient({ id }: { id: string }) {
               />
             ) : project.sectors ? (
               <BarChart
-                data={project.sectors.map((s: any) => ({
+                data={project.sectors.map((s) => ({
                   name: s.name[lang],
                   percentage: s.percentage,
                 }))}
-                suffix={(project as any).sectorsSuffix}
-                valuePrefix={(project as any).sectorsValuePrefix}
+                suffix={project.sectorsSuffix}
+                valuePrefix={project.sectorsValuePrefix}
               />
             ) : null}
           </div>
@@ -374,7 +375,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
               }
             />
             <div className="space-y-4">
-              {project.pillars.map((pillar: any, index: number) => (
+              {pillars.map((pillar, index) => (
                 <PillarCard
                   key={pillar.title[lang]}
                   title={pillar.title[lang]}
@@ -399,10 +400,10 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             <SectionHeading
               title={lang === "es" ? "Galería del Proyecto" : "Project Gallery"}
             />
-            {project.images.length === 3 ? (
+            {images.length === 3 ? (
               <>
                 <div className="grid grid-cols-2 gap-4">
-                  {project.images.slice(0, 2).map((img: any, index: number) => (
+                  {images.slice(0, 2).map((img, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -436,22 +437,22 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                 >
                   <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
                     <Image
-                      src={asset(project.images[2].src)}
-                      alt={project.images[2].caption?.[lang] || `${project.title[lang]} - 3`}
+                      src={asset(images[2].src)}
+                      alt={images[2].caption?.[lang] || `${project.title[lang]} - 3`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  {project.images[2].caption && (
+                  {images[2].caption && (
                     <p className="mt-2 text-sm text-slate-500 text-center">
-                      {project.images[2].caption[lang]}
+                      {images[2].caption[lang]}
                     </p>
                   )}
                 </motion.div>
               </>
             ) : (
-              <div className={`grid gap-4 ${project.images.length === 1 ? "grid-cols-1 max-w-2xl mx-auto" : "grid-cols-1 md:grid-cols-2"}`}>
-                {project.images.map((img: any, index: number) => (
+              <div className={`grid gap-4 ${images.length === 1 ? "grid-cols-1 max-w-2xl mx-auto" : "grid-cols-1 md:grid-cols-2"}`}>
+                {images.map((img, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -482,7 +483,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
       )}
 
       {/* Resources: External URL and/or Download */}
-      {(hasExternalUrl || hasDownload) && (
+      {(externalUrl || downloadUrl) && (
         <section className={`py-16 ${hasPillars ? "" : "bg-slate-50"}`}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -491,7 +492,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              {hasDownload ? (
+              {downloadUrl ? (
                 <div className="bg-navy rounded-2xl p-8 md:p-12 text-center">
                   <FileText className="w-16 h-16 text-cyan mx-auto mb-6" />
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -504,26 +505,26 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                       ? "Accede a todos los datos, metodología y recomendaciones detalladas"
                       : "Access all data, methodology and detailed recommendations"}
                   </p>
-                  {(project as any).downloadUrlEn ? (
+                  {downloadUrlEn ? (
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <GradientButton href={project.downloadUrl}>
+                      <GradientButton href={downloadUrl}>
                         <Download className="w-5 h-5 mr-2" />
                         {lang === "es" ? "Descargar en español" : "Download in Spanish"}
                       </GradientButton>
-                      <GradientButton href={(project as any).downloadUrlEn}>
+                      <GradientButton href={downloadUrlEn}>
                         <Download className="w-5 h-5 mr-2" />
                         {lang === "es" ? "Descargar en inglés" : "Download in English"}
                       </GradientButton>
                     </div>
                   ) : (
-                    <GradientButton href={project.downloadUrl}>
+                    <GradientButton href={downloadUrl}>
                       <Download className="w-5 h-5 mr-2" />
                       {lang === "es" ? "Descargar el reporte completo" : "Download the full report"}
                     </GradientButton>
                   )}
-                  {hasExternalUrl && (
+                  {externalUrl && (
                     <a
-                      href={project.externalUrl}
+                      href={externalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-6 text-slate-300 hover:text-cyan transition-colors text-sm"
@@ -544,7 +545,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                   </h2>
                   <div className="space-y-4">
                     <a
-                      href={project.externalUrl}
+                      href={externalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between p-5 bg-white rounded-xl border border-slate-200 hover:border-cyan hover:shadow-lg transition-all"
@@ -560,7 +561,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                               : "External resource"}
                           </div>
                           <div className="text-sm text-slate-500 truncate max-w-md">
-                            {project.externalUrl.replace(/^https?:\/\//, "")}
+                            {externalUrl?.replace(/^https?:\/\//, "")}
                           </div>
                         </div>
                       </div>
@@ -591,7 +592,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
               }
             />
             <div className="space-y-4">
-              {childProjects.map((cp: any, index: number) => {
+              {childProjects.map((cp, index) => {
                 const cpYear = cp.yearEnd ? `${cp.year}–${cp.yearEnd}` : String(cp.year);
                 const isCompleted = cp.status === "completed";
                 const hasReport = !!cp.downloadUrl || !!cp.externalUrl;

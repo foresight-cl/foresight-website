@@ -17,7 +17,6 @@ function FeaturedProjectCard({
   client,
   clientLogo,
   region,
-  year,
   featuredStat,
   delay = 0,
 }: {
@@ -27,7 +26,6 @@ function FeaturedProjectCard({
   client: string;
   clientLogo?: string;
   region?: string;
-  year: number;
   featuredStat?: { value: string; label: string };
   delay?: number;
 }) {
@@ -97,10 +95,10 @@ export function ProjectsShowcase() {
   const { lang } = useLang();
 
   const featured = projects
-    .filter((p) => (p as any).featured)
-    .sort((a, b) => ((a as any).featuredOrder ?? 99) - ((b as any).featuredOrder ?? 99));
+    .filter((p) => p.featured)
+    .sort((a, b) => (a.featuredOrder ?? 99) - (b.featuredOrder ?? 99));
   const recent = projects
-    .filter((p) => !(p as any).featured)
+    .filter((p) => !p.featured)
     .sort((a, b) => {
       if (a.status === "in_progress" && b.status !== "in_progress") return -1;
       if (a.status !== "in_progress" && b.status === "in_progress") return 1;
@@ -127,11 +125,10 @@ export function ProjectsShowcase() {
               key={project.id}
               id={project.id}
               title={project.title[lang]}
-              subtitle={(project as any).subtitle?.[lang]}
+              subtitle={project.subtitle?.[lang]}
               client={project.client}
               clientLogo={clientLogos[project.client]}
               region={project.region}
-              year={project.year}
               featuredStat={
                 project.featuredStat
                   ? {

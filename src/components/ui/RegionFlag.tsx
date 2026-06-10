@@ -30,6 +30,9 @@ export function RegionFlag({ region, size = 24 }: { region: string; size?: numbe
   const height = Math.round(size * 0.75);
   if (code) {
     return (
+      // Static export serves images unoptimized, so next/image adds nothing here
+      // and would require remotePatterns for flagcdn.com.
+      // eslint-disable-next-line @next/next/no-img-element
       <img
         src={`https://flagcdn.com/${size}x${height}/${code}.png`}
         srcSet={`https://flagcdn.com/${size * 2}x${height * 2}/${code}.png 2x`}

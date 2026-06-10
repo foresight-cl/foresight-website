@@ -2,7 +2,6 @@
 
 import {
   Hero,
-  ServicesSection,
   ProjectsShowcase,
   NewsHighlights,
   ClientsSection,

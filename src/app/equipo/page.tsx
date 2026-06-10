@@ -103,7 +103,7 @@ export default function TeamPage() {
                 bio={member.bio[lang]}
                 image={member.image}
                 linkedin={member.linkedin}
-                googleScholar={(member as any).googleScholar}
+                googleScholar={member.googleScholar}
                 delay={index * 0.1}
               />
             ))}

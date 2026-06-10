@@ -114,6 +114,23 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div
+                      role="alert"
+                      className="rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-amber-800"
+                    >
+                      {lang === "es"
+                        ? "No pudimos enviar el formulario. Abrimos tu cliente de correo como alternativa; también puedes escribirnos directamente a "
+                        : "We couldn't submit the form. We opened your email client as a fallback; you can also write to us directly at "}
+                      <a
+                        href={`mailto:${siteConfig.email}`}
+                        className="font-medium underline"
+                      >
+                        {siteConfig.email}
+                      </a>
+                      .
+                    </div>
+                  )}
                   <div>
                     <label htmlFor="contact-name" className="sr-only">
                       {c.nameLabel}
