@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Righteous } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Navbar, Footer } from "@/components/layout";
 import { ScrollToTop, SkipLink } from "@/components/ui";
@@ -114,6 +115,10 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </I18nProvider>
+        {/* Set NEXT_PUBLIC_GA_ID only in the hosting's Production env */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
