@@ -18,10 +18,10 @@ export const navigation = {
     { name: "Contacto", href: "/contacto" },
   ],
   en: [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/proyectos" },
-    { name: "About us", href: "/equipo" },
-    { name: "Contact", href: "/contacto" },
+    { name: "Home", href: "/en" },
+    { name: "Projects", href: "/en/proyectos" },
+    { name: "About us", href: "/en/equipo" },
+    { name: "Contact", href: "/en/contacto" },
   ],
 };
 

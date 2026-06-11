@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLang } from "@/lib/i18n";
+import { useLang, useLocalizedHref } from "@/lib/i18n";
 import { asset } from "@/lib/utils";
 import { RegionFlag } from "@/components/ui/RegionFlag";
 
@@ -30,6 +30,7 @@ function FeaturedProjectCard({
   delay?: number;
 }) {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -38,7 +39,7 @@ function FeaturedProjectCard({
       transition={{ duration: 0.5, delay }}
     >
       <Link
-        href={`/proyectos/${id}`}
+        href={localized(`/proyectos/${id}`)}
         className="group block bg-white rounded-2xl overflow-hidden border border-slate-200 card-hover"
       >
         <div className="bg-gradient-brand p-6 relative overflow-hidden">
@@ -93,6 +94,7 @@ function FeaturedProjectCard({
 
 export function ProjectsShowcase() {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
 
   const featured = projects
     .filter((p) => p.featured)
@@ -175,7 +177,7 @@ export function ProjectsShowcase() {
         </div>
 
         <div className="text-center mt-12">
-          <GradientButton href="/proyectos" variant="outline">
+          <GradientButton href={localized("/proyectos")} variant="outline">
             {lang === "es" ? "Ver todos los proyectos" : "View all projects"}
             <ArrowRight className="w-4 h-4 ml-2" />
           </GradientButton>

@@ -32,13 +32,12 @@ const projectIds = [...projectsSection.matchAll(/id:\s*"([^"]+)"/g)].map(
 
 const BASE_URL = "https://foresight.cl";
 
-// /reportes and /reportes/[slug] are client-side redirects to /proyectos,
+// /reportes, /reportes/[slug] and /noticias are client-side redirects,
 // so they are deliberately left out of the sitemap.
 const staticPages = [
   { path: "/", changefreq: "monthly", priority: "1.0" },
   { path: "/proyectos", changefreq: "monthly", priority: "0.8" },
   { path: "/equipo", changefreq: "monthly", priority: "0.6" },
-  { path: "/noticias", changefreq: "monthly", priority: "0.7" },
   { path: "/contacto", changefreq: "yearly", priority: "0.6" },
 ];
 
@@ -50,21 +49,33 @@ const dynamicPages = projectIds.map((id) => ({
 
 const allPages = [...staticPages, ...dynamicPages];
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allPages
-  .map(
-    (page) => `  <url>
-    <loc>${BASE_URL}${page.path}</loc>
+// Every page exists in Spanish (root) and English (/en/...); both URLs
+// are listed, each carrying the full set of hreflang alternates.
+const enPath = (p) => (p === "/" ? "/en" : `/en${p}`);
+
+const alternates = (esPath) => `
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}${esPath}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}${enPath(esPath)}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${esPath}"/>`;
+
+const urlEntry = (loc, page) => `  <url>
+    <loc>${loc}</loc>${alternates(page.path)}
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-  </url>`
-  )
+  </url>`;
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${allPages
+  .flatMap((page) => [
+    urlEntry(`${BASE_URL}${page.path}`, page),
+    urlEntry(`${BASE_URL}${enPath(page.path)}`, page),
+  ])
   .join("\n")}
 </urlset>
 `;
 
 writeFileSync(join(rootDir, "public/sitemap.xml"), sitemap);
 console.log(
-  `Sitemap generated with ${allPages.length} URLs (${staticPages.length} static + ${dynamicPages.length} dynamic)`
+  `Sitemap generated with ${allPages.length * 2} URLs (${allPages.length} pages x es/en)`
 );
