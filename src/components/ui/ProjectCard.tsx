@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn, asset } from "@/lib/utils";
-import { useLang } from "@/lib/i18n";
+import { useLang, useLocalizedHref } from "@/lib/i18n";
 import { RegionFlag } from "./RegionFlag";
 
 interface ProjectCardProps {
@@ -41,8 +41,9 @@ export function ProjectCard({
   delay = 0,
 }: ProjectCardProps) {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
   const yearDisplay = yearEnd ? `${year}–${yearEnd}` : String(year);
-  const href = `/proyectos/${id}`;
+  const href = localized(`/proyectos/${id}`);
 
   const statusLabel =
     status === "in_progress"

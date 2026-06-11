@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLang } from "@/lib/i18n";
+import { useLang, useLocalizedHref } from "@/lib/i18n";
 import { asset } from "@/lib/utils";
 import { RegionFlag } from "@/components/ui/RegionFlag";
 
@@ -17,7 +17,6 @@ function FeaturedProjectCard({
   client,
   clientLogo,
   region,
-  year,
   featuredStat,
   delay = 0,
 }: {
@@ -27,11 +26,11 @@ function FeaturedProjectCard({
   client: string;
   clientLogo?: string;
   region?: string;
-  year: number;
   featuredStat?: { value: string; label: string };
   delay?: number;
 }) {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,7 +39,7 @@ function FeaturedProjectCard({
       transition={{ duration: 0.5, delay }}
     >
       <Link
-        href={`/proyectos/${id}`}
+        href={localized(`/proyectos/${id}`)}
         className="group block bg-white rounded-2xl overflow-hidden border border-slate-200 card-hover"
       >
         <div className="bg-gradient-brand p-6 relative overflow-hidden">
@@ -95,12 +94,13 @@ function FeaturedProjectCard({
 
 export function ProjectsShowcase() {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
 
   const featured = projects
-    .filter((p) => (p as any).featured)
-    .sort((a, b) => ((a as any).featuredOrder ?? 99) - ((b as any).featuredOrder ?? 99));
+    .filter((p) => p.featured)
+    .sort((a, b) => (a.featuredOrder ?? 99) - (b.featuredOrder ?? 99));
   const recent = projects
-    .filter((p) => !(p as any).featured)
+    .filter((p) => !p.featured)
     .sort((a, b) => {
       if (a.status === "in_progress" && b.status !== "in_progress") return -1;
       if (a.status !== "in_progress" && b.status === "in_progress") return 1;
@@ -127,11 +127,10 @@ export function ProjectsShowcase() {
               key={project.id}
               id={project.id}
               title={project.title[lang]}
-              subtitle={(project as any).subtitle?.[lang]}
+              subtitle={project.subtitle?.[lang]}
               client={project.client}
               clientLogo={clientLogos[project.client]}
               region={project.region}
-              year={project.year}
               featuredStat={
                 project.featuredStat
                   ? {
@@ -178,7 +177,7 @@ export function ProjectsShowcase() {
         </div>
 
         <div className="text-center mt-12">
-          <GradientButton href="/proyectos" variant="outline">
+          <GradientButton href={localized("/proyectos")} variant="outline">
             {lang === "es" ? "Ver todos los proyectos" : "View all projects"}
             <ArrowRight className="w-4 h-4 ml-2" />
           </GradientButton>

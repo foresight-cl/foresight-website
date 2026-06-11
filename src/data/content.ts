@@ -1,3 +1,5 @@
+import type { NewsItem, Project, Report, TeamMember } from "./types";
+
 export const siteConfig = {
   name: "Foresight",
   url: "https://foresight.cl",
@@ -16,10 +18,10 @@ export const navigation = {
     { name: "Contacto", href: "/contacto" },
   ],
   en: [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/proyectos" },
-    { name: "About us", href: "/equipo" },
-    { name: "Contact", href: "/contacto" },
+    { name: "Home", href: "/en" },
+    { name: "Projects", href: "/en/proyectos" },
+    { name: "About us", href: "/en/equipo" },
+    { name: "Contact", href: "/en/contacto" },
   ],
 };
 
@@ -123,7 +125,7 @@ export const clientLogos: Record<string, string> = Object.fromEntries(
   clients.map((c) => [c.name, c.logo])
 );
 
-export const projects = [
+export const projects: Project[] = [
   // ── 2025–2026 | En desarrollo ──────────────────────────────────
   // hidden until client authorization
   // {
@@ -143,8 +145,8 @@ export const projects = [
   //   client: "Ballerina",
   //   year: 2025,
   //   region: "Chile",
-  //   type: "consulting" as const,
-  //   status: "in_progress" as const,
+  //   type: "consulting",
+  //   status: "in_progress",
   // },
   {
     id: "revision-legislativa-jamaica",
@@ -164,7 +166,7 @@ export const projects = [
     year: 2026,
     region: "Jamaica",
     type: "policy",
-    status: "in_progress" as const,
+    status: "in_progress",
   },
   {
     id: "ilia-2026",
@@ -184,7 +186,7 @@ export const projects = [
     year: 2026,
     region: "Latinoamérica",
     type: "research",
-    status: "in_progress" as const,
+    status: "in_progress",
     externalUrl: "https://indicelatam.cl/",
   },
   {
@@ -205,8 +207,8 @@ export const projects = [
     year: 2025,
     yearEnd: 2026,
     region: "Global",
-    type: "research" as const,
-    status: "completed" as const,
+    type: "research",
+    status: "completed",
   },
   {
     id: "ram-unesco",
@@ -226,8 +228,8 @@ export const projects = [
     year: 2021,
     yearEnd: 2026,
     region: "Global",
-    type: "assessment" as const,
-    status: "completed" as const,
+    type: "assessment",
+    status: "completed",
     featured: true,
     featuredOrder: 1,
     featuredStat: { value: "8", label: { es: "Países evaluados", en: "Countries assessed" } },
@@ -303,7 +305,7 @@ export const projects = [
     yearEnd: 2026,
     region: "El Salvador",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
   },
   {
@@ -325,7 +327,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Honduras",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
   },
   {
@@ -347,7 +349,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Panamá",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
   },
   {
@@ -368,7 +370,7 @@ export const projects = [
     year: 2025,
     region: "Guatemala",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
   },
   {
@@ -388,8 +390,8 @@ export const projects = [
     client: "CENIA",
     year: 2025,
     region: "Latinoamérica",
-    type: "research" as const,
-    status: "completed" as const,
+    type: "research",
+    status: "completed",
     featured: true,
     featuredOrder: 3,
     featuredStat: { value: "28", label: { es: "Casos de uso de IA en participación ciudadana identificados en 11 países", en: "AI use cases in citizen participation identified across 11 countries" } },
@@ -456,7 +458,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Latinoamérica",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
     featured: true,
     featuredOrder: 2,
     featuredStat: { value: "$130–242B", label: { es: "USD impacto económico anual potencial", en: "USD potential annual economic impact" } },
@@ -554,8 +556,8 @@ export const projects = [
     client: "Google",
     year: 2026,
     region: "El Salvador",
-    type: "research" as const,
-    status: "in_progress" as const,
+    type: "research",
+    status: "in_progress",
     parentProject: "ai-sprinters",
   },
   {
@@ -575,8 +577,8 @@ export const projects = [
     client: "Google",
     year: 2025,
     region: "Chile",
-    type: "research" as const,
-    status: "completed" as const,
+    type: "research",
+    status: "completed",
     parentProject: "ai-sprinters",
     featuredStat: {
       value: "10,9–20%",
@@ -658,8 +660,8 @@ export const projects = [
     client: "Google",
     year: 2025,
     region: "México",
-    type: "research" as const,
-    status: "completed" as const,
+    type: "research",
+    status: "completed",
     parentProject: "ai-sprinters",
     featuredStat: {
       value: "3–5,6%",
@@ -741,8 +743,8 @@ export const projects = [
     client: "Google",
     year: 2026,
     region: "Argentina",
-    type: "research" as const,
-    status: "completed" as const,
+    type: "research",
+    status: "completed",
     parentProject: "ai-sprinters",
     featuredStat: {
       value: "3,7–6,7%",
@@ -826,8 +828,8 @@ export const projects = [
     year: 2024,
     yearEnd: 2025,
     region: "Camboya",
-    type: "assessment" as const,
-    status: "completed" as const,
+    type: "assessment",
+    status: "completed",
     parentProject: "ram-unesco",
     featuredStat: {
       value: "0,09%",
@@ -916,7 +918,7 @@ export const projects = [
     year: 2024,
     region: "Latinoamérica",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
     featuredStat: { value: "12+", label: { es: "Países analizados", en: "Countries analyzed" } },
   },
   {
@@ -937,7 +939,7 @@ export const projects = [
     year: 2024,
     region: "Chile",
     type: "policy",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "indice-idi-logistica",
@@ -957,7 +959,7 @@ export const projects = [
     year: 2024,
     region: "Chile",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "prospeccion-regulacion-ia",
@@ -977,7 +979,7 @@ export const projects = [
     year: 2024,
     region: "Chile",
     type: "consulting",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://centrodeinnovacion.uc.cl",
   },
   {
@@ -998,7 +1000,7 @@ export const projects = [
     year: 2024,
     region: "Chile",
     type: "policy",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "levantamiento-proyectos-ia-chile",
@@ -1018,7 +1020,7 @@ export const projects = [
     year: 2024,
     region: "Chile",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
   },
   // ── 2023–2024 ──────────────────────────────────────────────────
   {
@@ -1040,7 +1042,7 @@ export const projects = [
     yearEnd: 2024,
     region: "República Dominicana",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
     summaryHighlight: {
       es: "Las recomendaciones de la RAM fueron incorporadas directamente en la Estrategia Nacional de Inteligencia Artificial (ENIA), lanzada por decreto presidencial durante la implementación del estudio",
@@ -1120,7 +1122,7 @@ export const projects = [
     yearEnd: 2024,
     region: "Cuba",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
     externalUrl: "https://www.unesco.org/ethics-ai/en/cuba",
   },
@@ -1143,7 +1145,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "policy",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://minciencia.gob.cl",
   },
   {
@@ -1164,7 +1166,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "assessment",
-    status: "completed" as const,
+    status: "completed",
     parentProject: "ram-unesco",
     featuredStat: { value: "300+", label: { es: "Participantes en mesas redondas en 6 regiones", en: "Roundtable participants across 6 regions" } },
     summaryHighlight: {
@@ -1244,7 +1246,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "voz-nuevos-votantes",
@@ -1264,7 +1266,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "consulting",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://ipp.unab.cl",
   },
   {
@@ -1285,7 +1287,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "sesgos-ia-apec",
@@ -1305,7 +1307,7 @@ export const projects = [
     year: 2023,
     region: "Global",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://www.apec.org",
   },
   {
@@ -1326,7 +1328,7 @@ export const projects = [
     year: 2023,
     region: "Latinoamérica",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
     featuredStat: { value: "1°", label: { es: "Índice de IA en Latam", en: "AI Index in LatAm" } },
     externalUrl: "https://indicelatam.cl/",
   },
@@ -1348,7 +1350,7 @@ export const projects = [
     year: 2023,
     region: "Chile",
     type: "consulting",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://ipp.unab.cl",
   },
   // ── 2022–2023 ──────────────────────────────────────────────────
@@ -1371,7 +1373,7 @@ export const projects = [
     yearEnd: 2023,
     region: "Rep. Dominicana y Uruguay",
     type: "consulting",
-    status: "completed" as const,
+    status: "completed",
     externalUrl: "https://scioteca.caf.com",
   },
   // ── 2022 ───────────────────────────────────────────────────────
@@ -1393,7 +1395,7 @@ export const projects = [
     year: 2022,
     region: "Latinoamérica",
     type: "research",
-    status: "completed" as const,
+    status: "completed",
   },
   {
     id: "analisis-participacion-unab",
@@ -1413,11 +1415,11 @@ export const projects = [
     year: 2022,
     region: "Chile",
     type: "consulting",
-    status: "completed" as const,
+    status: "completed",
   },
 ];
 
-export const reports = [
+export const reports: Report[] = [
   {
     slug: "ai-sprinters-chile",
     title: {
@@ -1667,7 +1669,7 @@ export const aboutContent = {
   },
 };
 
-export const team = [
+export const team: TeamMember[] = [
   {
     id: "julio-pertuze",
     name: "Julio Pertuzé",
@@ -1688,7 +1690,7 @@ export const team = [
       es: "PhD (c) en Ciencias de la Información, Cornell. Experto en gobernanza y adopción de IA en instituciones públicas y privadas.",
       en: "PhD candidate in Information Science, Cornell. Expert in AI governance and adoption in public and private institutions.",
     },
-    image: "/images/team/jose-guridi.png",
+    image: "/images/team/jose-guridi.jpg",
     linkedin: "https://www.linkedin.com/in/jaguridi/",
     googleScholar: "https://scholar.google.com/citations?user=P5xFVC4AAAAJ&hl=en&oi=ao",
   },
@@ -1711,7 +1713,7 @@ export const team = [
       es: "MSc Political Economy (KCL). Jefe de Estudios CENIA, cofundador de Foresight. Consultor para CEPAL, UNESCO, BID y gobiernos.",
       en: "MSc Political Economy (KCL). Head of Research at CENIA, co-founder of Foresight. Consultant for ECLAC, UNESCO, IDB, and governments.",
     },
-    image: "/images/team/Sebastián Adasme.jpg",
+    image: "/images/team/sebastian-adasme.jpg",
     linkedin: "https://www.linkedin.com/in/sebastián-adasme-toro-18465b201/",
   },
   {
@@ -1765,7 +1767,7 @@ export const contactContent = {
   },
 };
 
-export const newsItems = [
+export const newsItems: NewsItem[] = [
   {
     id: "ram-centroamerica-2025",
     title: {
@@ -1777,7 +1779,7 @@ export const newsItems = [
       en: "Foresight launches the implementation of UNESCO's RAM methodology in three new Central American countries, expanding our work to 10+ countries assessed.",
     },
     date: "2025-09-15",
-    category: "alianza" as const,
+    category: "alianza",
   },
   {
     id: "ai-sprinters-mexico-2025",
@@ -1790,7 +1792,7 @@ export const newsItems = [
       en: "We published with Google the AI economic impact study for Mexico, estimating a growth potential of USD $55–103 billion annually.",
     },
     date: "2025-06-01",
-    category: "publicacion" as const,
+    category: "publicacion",
   },
   {
     id: "google-impacto-ia-chile",
@@ -1803,7 +1805,7 @@ export const newsItems = [
       en: "As part of Google's AI Sprinters series, we estimated AI could generate between USD 36 and USD 67 billion annually in Chile, transforming sectors like finance, commerce and manufacturing.",
     },
     date: "2025-03-10",
-    category: "publicacion" as const,
+    category: "publicacion",
   },
   {
     id: "politica-ia-lascondes",
@@ -1816,7 +1818,7 @@ export const newsItems = [
       en: "In collaboration with CENIA, we developed the country's first municipal artificial intelligence policy for the Municipality of Las Condes, including a citizen participation process.",
     },
     date: "2024-06-20",
-    category: "logro" as const,
+    category: "logro",
   },
   {
     id: "ilia-2024",
@@ -1829,7 +1831,7 @@ export const newsItems = [
       en: "The third edition of ILIA was launched, the most comprehensive study on the state of AI in Latin America, covering 12 countries with over 200 indicators.",
     },
     date: "2024-11-15",
-    category: "publicacion" as const,
+    category: "publicacion",
   },
 ];
 

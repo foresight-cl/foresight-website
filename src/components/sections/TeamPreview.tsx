@@ -1,8 +1,7 @@
 "use client";
 
-import { SectionHeading, TeamCard, GradientButton } from "@/components/ui";
+import { SectionHeading, TeamCard } from "@/components/ui";
 import { team } from "@/data/content";
-import { ArrowRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 
 export function TeamPreview() {
@@ -28,7 +27,7 @@ export function TeamPreview() {
               bio={member.bio[lang]}
               image={member.image}
               linkedin={member.linkedin}
-              googleScholar={(member as any).googleScholar}
+              googleScholar={member.googleScholar}
               delay={index * 0.1}
             />
           ))}

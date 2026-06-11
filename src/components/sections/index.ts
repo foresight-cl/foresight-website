@@ -2,7 +2,6 @@ export { Hero } from "./Hero";
 export { StatsBar } from "./StatsBar";
 export { ServicesSection } from "./ServicesSection";
 export { ProjectsShowcase } from "./ProjectsShowcase";
-export { ProjectsGrid } from "./ProjectsGrid";
 export { ClientsSection } from "./ClientsSection";
 export { TeamPreview } from "./TeamPreview";
 export { NewsHighlights } from "./NewsHighlights";

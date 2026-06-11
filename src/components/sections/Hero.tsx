@@ -4,10 +4,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { GradientButton } from "@/components/ui";
 import { heroContent, heroStats } from "@/data/content";
-import { useLang } from "@/lib/i18n";
+import { useLang, useLocalizedHref } from "@/lib/i18n";
 
 export function Hero() {
   const { lang } = useLang();
+  const localized = useLocalizedHref();
   const content = heroContent[lang];
   const prefersReducedMotion = useReducedMotion();
 
@@ -70,7 +71,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <GradientButton href="/proyectos" size="lg">
+          <GradientButton href={localized("/proyectos")} size="lg">
             {content.cta}
             <ArrowRight className="w-5 h-5 ml-2" />
           </GradientButton>

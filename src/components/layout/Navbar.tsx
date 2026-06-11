@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -8,19 +8,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navigation } from "@/data/content";
 import { cn, asset } from "@/lib/utils";
-import { useLang } from "@/lib/i18n";
+import { useLang, localizedPath } from "@/lib/i18n";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { lang, setLang } = useLang();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const { lang } = useLang();
   const pathname = usePathname();
 
   const navItems = navigation[lang];
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
+    if (href === "/" || href === "/en") return pathname === href;
     return pathname.startsWith(href);
+  };
+
+  const rememberLang = (target: "es" | "en") => {
+    try {
+      localStorage.setItem("lang", target);
+    } catch {
+      // private mode etc.
+    }
   };
 
   useEffect(() => {
@@ -31,6 +40,24 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Escape closes the mobile menu and returns focus to its toggle button
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
+  // Close the mobile menu when navigating to another page
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -44,7 +71,7 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href={lang === "en" ? "/en" : "/"} className="flex-shrink-0">
             <Image
               src={asset("/images/logos/logo-original.png")}
               alt="Foresight"
@@ -78,10 +105,13 @@ export function Navbar() {
 
           {/* Language Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
-            {/* Language Toggle */}
+            {/* Language Toggle — links so crawlers can discover both trees */}
             <div className="flex items-center bg-slate-100 rounded-full p-1">
-              <button
-                onClick={() => setLang("es")}
+              <Link
+                href={localizedPath(pathname, "es")}
+                onClick={() => rememberLang("es")}
+                aria-current={lang === "es" ? "true" : undefined}
+                aria-label="Español"
                 className={cn(
                   "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                   lang === "es"
@@ -90,9 +120,12 @@ export function Navbar() {
                 )}
               >
                 ES
-              </button>
-              <button
-                onClick={() => setLang("en")}
+              </Link>
+              <Link
+                href={localizedPath(pathname, "en")}
+                onClick={() => rememberLang("en")}
+                aria-current={lang === "en" ? "true" : undefined}
+                aria-label="English"
                 className={cn(
                   "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                   lang === "en"
@@ -101,11 +134,12 @@ export function Navbar() {
                 )}
               >
                 EN
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
+              ref={menuButtonRef}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
               aria-label={isMobileMenuOpen ? (lang === "es" ? "Cerrar menú" : "Close menu") : (lang === "es" ? "Abrir menú" : "Open menu")}
