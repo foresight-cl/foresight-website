@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Contacto | Foresight",
-  description:
-    "Contáctanos para integrar inteligencia artificial en tu organización. Consultoría estratégica en IA para América Latina.",
-  openGraph: {
-    title: "Contacto | Foresight",
-    description:
-      "Contáctanos para integrar inteligencia artificial en tu organización. Consultoría estratégica en IA para América Latina.",
-  },
-};
+export const metadata = buildPageMetadata({
+  lang: "es",
+  esPath: "/contacto",
+  title: pageMeta["/contacto"].title.es,
+  description: pageMeta["/contacto"].description.es,
+});
 
 export default function ContactLayout({
   children,

@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Proyectos | Foresight",
-  description:
-    "Más de 20 proyectos ejecutados en múltiples países de América Latina, el Caribe y Asia-Pacífico en inteligencia artificial.",
-  openGraph: {
-    title: "Proyectos | Foresight",
-    description:
-      "Más de 20 proyectos ejecutados en múltiples países de América Latina, el Caribe y Asia-Pacífico en inteligencia artificial.",
-  },
-};
+export const metadata = buildPageMetadata({
+  lang: "es",
+  esPath: "/proyectos",
+  title: pageMeta["/proyectos"].title.es,
+  description: pageMeta["/proyectos"].description.es,
+});
 
 export default function ProjectsLayout({
   children,

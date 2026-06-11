@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Foresight - Consultoría Estratégica en Inteligencia Artificial",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Foresight | Consultoría en Inteligencia Artificial",
     description:
       "Acompañamos a organizaciones públicas y privadas en su adopción estratégica de inteligencia artificial en América Latina.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { projects } from "@/data/content";
+import { buildPageMetadata } from "@/lib/metadata";
 import ProjectDetailClient from "./ProjectDetailClient";
 
 export function generateStaticParams() {
@@ -14,23 +15,12 @@ export async function generateMetadata({
   const { id } = await params;
   const project = projects.find((p) => p.id === id);
   if (!project) return {};
-  return {
+  return buildPageMetadata({
+    lang: "es",
+    esPath: `/proyectos/${id}`,
     title: `${project.title.es} | Foresight`,
     description: project.description.es,
-    alternates: {
-      canonical: `/proyectos/${id}`,
-    },
-    openGraph: {
-      title: `${project.title.es} | Foresight`,
-      description: project.description.es,
-      url: `/proyectos/${id}`,
-    },
-    twitter: {
-      card: "summary",
-      title: `${project.title.es} | Foresight`,
-      description: project.description.es,
-    },
-  };
+  });
 }
 
 export default async function ProjectDetailPage({

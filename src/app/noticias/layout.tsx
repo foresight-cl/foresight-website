@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Noticias y Logros | Foresight",
-  description:
-    "Últimas noticias, logros y novedades sobre el trabajo de Foresight en inteligencia artificial en América Latina.",
-  openGraph: {
-    title: "Noticias y Logros | Foresight",
-    description:
-      "Últimas noticias, logros y novedades sobre el trabajo de Foresight en inteligencia artificial en América Latina.",
-  },
-};
+export const metadata = buildPageMetadata({
+  lang: "es",
+  esPath: "/noticias",
+  title: pageMeta["/noticias"].title.es,
+  description: pageMeta["/noticias"].description.es,
+});
 
 export default function NoticiasLayout({
   children,

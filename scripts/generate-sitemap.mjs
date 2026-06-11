@@ -16,43 +16,37 @@ const contentFile = readFileSync(
   "utf-8"
 );
 
-// Extract project IDs (only from the projects array, not from team)
-const projectsSection = contentFile.slice(
-  contentFile.indexOf("export const projects"),
-  contentFile.indexOf("export const reports")
-);
+// Extract project IDs (only from the projects array, not from team).
+// Commented-out entries (hidden projects) must not produce sitemap URLs.
+const projectsSection = contentFile
+  .slice(
+    contentFile.indexOf("export const projects"),
+    contentFile.indexOf("export const reports")
+  )
+  .split("\n")
+  .filter((line) => !line.trimStart().startsWith("//"))
+  .join("\n");
 const projectIds = [...projectsSection.matchAll(/id:\s*"([^"]+)"/g)].map(
-  (m) => m[1]
-);
-
-// Extract report slugs
-const reportSlugs = [...contentFile.matchAll(/slug:\s*"([^"]+)"/g)].map(
   (m) => m[1]
 );
 
 const BASE_URL = "https://foresight.cl";
 
+// /reportes and /reportes/[slug] are client-side redirects to /proyectos,
+// so they are deliberately left out of the sitemap.
 const staticPages = [
   { path: "/", changefreq: "monthly", priority: "1.0" },
   { path: "/proyectos", changefreq: "monthly", priority: "0.8" },
-  { path: "/reportes", changefreq: "monthly", priority: "0.8" },
   { path: "/equipo", changefreq: "monthly", priority: "0.6" },
   { path: "/noticias", changefreq: "monthly", priority: "0.7" },
   { path: "/contacto", changefreq: "yearly", priority: "0.6" },
 ];
 
-const dynamicPages = [
-  ...reportSlugs.map((slug) => ({
-    path: `/reportes/${slug}`,
-    changefreq: "yearly",
-    priority: "0.7",
-  })),
-  ...projectIds.map((id) => ({
-    path: `/proyectos/${id}`,
-    changefreq: "yearly",
-    priority: "0.5",
-  })),
-];
+const dynamicPages = projectIds.map((id) => ({
+  path: `/proyectos/${id}`,
+  changefreq: "yearly",
+  priority: "0.5",
+}));
 
 const allPages = [...staticPages, ...dynamicPages];
 

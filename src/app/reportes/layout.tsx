@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Reportes e Investigación | Foresight",
-  description:
-    "Análisis y estudios sobre el impacto de la inteligencia artificial en América Latina.",
-  openGraph: {
-    title: "Reportes e Investigación | Foresight",
-    description:
-      "Análisis y estudios sobre el impacto de la inteligencia artificial en América Latina.",
-  },
-};
+export const metadata = buildPageMetadata({
+  lang: "es",
+  esPath: "/reportes",
+  title: pageMeta["/reportes"].title.es,
+  description: pageMeta["/reportes"].description.es,
+  // /reportes is a client-side redirect to /proyectos
+  canonicalOverride: "/proyectos",
+});
 
 export default function ReportsLayout({
   children,

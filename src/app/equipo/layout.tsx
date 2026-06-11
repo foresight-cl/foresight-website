@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Equipo | Foresight",
-  description:
-    "Expertos en políticas públicas, tecnología y gobernanza de inteligencia artificial en América Latina.",
-  openGraph: {
-    title: "Equipo | Foresight",
-    description:
-      "Expertos en políticas públicas, tecnología y gobernanza de inteligencia artificial en América Latina.",
-  },
-};
+export const metadata = buildPageMetadata({
+  lang: "es",
+  esPath: "/equipo",
+  title: pageMeta["/equipo"].title.es,
+  description: pageMeta["/equipo"].description.es,
+});
 
 export default function TeamLayout({
   children,
