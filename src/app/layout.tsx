@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Righteous } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer } from "@/components/layout";
-import { ScrollToTop } from "@/components/ui";
+import { ScrollToTop, SkipLink } from "@/components/ui";
 import { I18nProvider } from "@/lib/i18n";
 
 const inter = Inter({
@@ -108,8 +108,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <I18nProvider>
+          <SkipLink />
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main id="main-content" className="flex-grow">{children}</main>
           <Footer />
           <ScrollToTop />
         </I18nProvider>

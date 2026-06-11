@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,6 +13,7 @@ import { useLang } from "@/lib/i18n";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const { lang, setLang } = useLang();
   const pathname = usePathname();
 
@@ -31,6 +32,24 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Escape closes the mobile menu and returns focus to its toggle button
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
+  // Close the mobile menu when navigating to another page
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -82,6 +101,8 @@ export function Navbar() {
             <div className="flex items-center bg-slate-100 rounded-full p-1">
               <button
                 onClick={() => setLang("es")}
+                aria-pressed={lang === "es"}
+                aria-label="Español"
                 className={cn(
                   "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                   lang === "es"
@@ -93,6 +114,8 @@ export function Navbar() {
               </button>
               <button
                 onClick={() => setLang("en")}
+                aria-pressed={lang === "en"}
+                aria-label="English"
                 className={cn(
                   "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                   lang === "en"
@@ -106,6 +129,7 @@ export function Navbar() {
 
             {/* Mobile Menu Button */}
             <button
+              ref={menuButtonRef}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
               aria-label={isMobileMenuOpen ? (lang === "es" ? "Cerrar menú" : "Close menu") : (lang === "es" ? "Abrir menú" : "Open menu")}

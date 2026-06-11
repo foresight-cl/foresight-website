@@ -8,5 +8,6 @@ export { ClientLogo } from "./ClientLogo";
 export { BarChart, RangeBarChart } from "./BarChart";
 export { ServiceCard } from "./ServiceCard";
 export { ScrollToTop } from "./ScrollToTop";
+export { SkipLink } from "./SkipLink";
 export { NewsCard } from "./NewsCard";
 export { LinkedInFeed } from "./LinkedInFeed";
