@@ -46,6 +46,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://foresight.cl/reportes/ai-sprinters-colombia</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://foresight.cl/proyectos/ballerina-ia-generativa</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -117,6 +122,11 @@
   </url>
   <url>
     <loc>https://foresight.cl/proyectos/ai-sprinters-argentina</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://foresight.cl/proyectos/ai-sprinters-colombia</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

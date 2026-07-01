@@ -809,6 +809,91 @@ export const projects = [
     downloadUrlEn: "/reports/ai-sprinters-argentina-en.pdf",
   },
   {
+    id: "ai-sprinters-colombia",
+    title: {
+      es: "AI Sprinters: Una oportunidad histórica para Colombia",
+      en: "AI Sprinters: A Historic Opportunity for Colombia",
+    },
+    subtitle: {
+      es: "Inteligencia artificial para desatar el potencial económico de Colombia, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence to unlock Colombia's economic potential, part of Google's AI Digital Sprinters series",
+    },
+    description: {
+      es: "Estudio de impacto económico de la IA en Colombia, parte de la serie AI Digital Sprinters de Google. Se estima que la IA podría generar entre USD 7.203 y USD 13.599 millones anuales, equivalentes al 2% y 3,7% del PIB.",
+      en: "AI economic impact study for Colombia, part of Google's AI Digital Sprinters series. AI could generate between USD 7.203 and USD 13.599 billion annually, equivalent to 2% and 3.7% of GDP.",
+    },
+    client: "Google",
+    year: 2026,
+    region: "Colombia",
+    type: "research" as const,
+    status: "completed" as const,
+    parentProject: "ai-sprinters",
+    featuredStat: {
+      value: "2–3,7%",
+      label: { es: "Del PIB de Colombia podría representar el impacto económico de la IA", en: "Of Colombia's GDP could represent AI's economic impact" },
+    },
+    summaryHighlight: {
+      es: "La IA podría generar entre USD 7.203 y USD 13.599 millones anuales, equivalentes al 2% y 3,7% del PIB",
+      en: "AI could generate between USD 7.203 and USD 13.599 billion annually, equivalent to 2% and 3.7% of GDP",
+    },
+    executiveSummary: {
+      es: "Al analizar la matriz productiva de Colombia, se estima que la IA podría generar entre USD 7.203 y USD 13.599 millones anuales, equivalentes al 2% y 3,7% del PIB. Los sectores con mayor impacto proyectado son la manufactura (USD 886–1.658 millones) y el comercio (USD 832–1.520 millones), seguidos por la enseñanza, la agricultura y las actividades inmobiliarias. Sin embargo, considerando la tasa de adopción actual cercana al 21% según el Ministerio de Ciencia, el impacto estimado se reduce a un rango de USD 1.513 a 2.856 millones anuales. Colombia cuenta con un sólido marco institucional —incluida la Política Nacional de IA actualizada por el CONPES en febrero de 2025— y un ecosistema de innovación prometedor, aunque persisten brechas en conectividad territorial, inversión en I+D e inglés. Este reporte es parte de la serie IA Digital Sprinters de Google.",
+      en: "Analyzing Colombia's productive matrix, AI could generate between USD 7.203 and USD 13.599 billion annually, equivalent to 2% and 3.7% of GDP. The sectors with the highest projected impact are manufacturing (USD 886–1.658 million) and trade (USD 832–1.520 million), followed by education, agriculture and real estate. However, considering the current adoption rate of around 21% according to the Ministry of Science, the estimated impact is reduced to a range of USD 1.513 to 2.856 billion annually. Colombia has a strong institutional framework —including the National AI Policy updated by CONPES in February 2025— and a promising innovation ecosystem, although gaps remain in territorial connectivity, R&D investment and English proficiency. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "$7–14B", label: { es: "USD millones anuales", en: "USD Billion Annual" } },
+      { value: "21%", label: { es: "Tasa de adopción de IA", en: "AI Adoption Rate" } },
+      { value: "33", label: { es: "Centros de datos", en: "Data Centers" } },
+    ],
+    pillarsTitle: { es: "Factores Habilitantes", en: "Enabling Factors" },
+    pillarsSubtitle: { es: "Áreas clave del marco Digital Sprinters de Google", en: "Key areas of Google's Digital Sprinters framework" },
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 12 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 11 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 8 },
+      { name: { es: "Agricultura, Ganadería y Pesca", en: "Agriculture, Forestry & Fishing" }, percentage: 8 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 8 },
+      { name: { es: "Servicios Financieros y Seguros", en: "Financial Services & Insurance" }, percentage: 7 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "Colombia cuenta con un sólido marco institucional para el desarrollo y la adopción de la IA, destacándose por su visión estratégica y su alineación con estándares internacionales. La Política Nacional de Transformación Digital e IA (2019) y el Marco Ético (2021, basado en directrices de la OCDE y la UNESCO) sentaron las bases, y en febrero de 2025 el CONPES actualizó la Política Nacional de IA con seis metas para una gobernanza ética. Recomendaciones: implementar la estrategia nacional de IA con una gobernanza clara e indicadores definidos, integrar la IA en los planes sectoriales de desarrollo (educación, salud, agricultura y justicia) y revisar los marcos legales existentes antes de introducir nuevas leyes específicas.",
+          en: "Colombia has a strong institutional framework for AI development and adoption, standing out for its strategic vision and alignment with international standards. The National Digital Transformation and AI Policy (2019) and the Ethical Framework (2021, based on OECD and UNESCO guidelines) laid the foundation, and in February 2025 CONPES updated the National AI Policy with six goals for ethical governance. Recommendations: operationalize the national AI strategy with clear governance and defined KPIs, integrate AI into sectoral development plans (education, health, agriculture and justice), and review existing legal frameworks before introducing new AI-specific laws.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "El desarrollo de la IA en Colombia requiere fortalecer su infraestructura digital, especialmente la conectividad: en 2024 solo el 65,6% de los hogares tenía acceso a internet, con una marcada brecha entre zonas urbanas (72,5%) y rurales (41,9%). En infraestructura tecnológica, el país ocupa el segundo lugar en Hispanoamérica en sistemas de computación de alto rendimiento (11) y el cuarto en la región en centros de datos (33 instalaciones), ubicándose entre los 25 primeros del mundo. Recomendaciones: priorizar el cierre de la brecha digital territorial, fortalecer la infraestructura de centros de datos y servicios en la nube mediante políticas Cloud First, e impulsar ecosistemas de datos abiertos e interoperables.",
+          en: "AI development in Colombia requires strengthening its digital infrastructure, especially connectivity: in 2024 only 65.6% of households had internet access, with a marked gap between urban (72.5%) and rural (41.9%) areas. In technological infrastructure, the country ranks second in Hispanic America in high-performance computing systems (11) and fourth in the region in data centers (33 facilities), placing it among the top 25 globally. Recommendations: prioritize closing the territorial digital divide, strengthen data center and cloud infrastructure through Cloud First policies, and promote open and interoperable data ecosystems.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "El ecosistema de innovación de Colombia muestra señales prometedoras: según el Colombia Tech Report 2024, la IA es el sector más prometedor, con alta adopción entre startups (81% de AdTech, 80% de EnergyTech, 77% de Industria 4.0 y 74% de HealthTech). Casos como Arkangel AI en salud, Habi en el sector inmobiliario y Grupo Nutresa ilustran su rol creciente. Sin embargo, nueve de cada diez PYMEs carecen de procesos formales de innovación y el país invierte menos del 0,3% del PIB en I+D, menos de la mitad del promedio regional (0,62%). Recomendaciones: aumentar la inversión pública y privada en I+D centrada en IA, fomentar la innovación estructurada en PYMEs y construir alianzas estratégicas entre academia, industria y gobierno.",
+          en: "Colombia's innovation ecosystem shows promising signs: according to the Colombia Tech Report 2024, AI is the most promising sector, with high adoption among startups (81% of AdTech, 80% of EnergyTech, 77% of Industry 4.0 and 74% of HealthTech). Cases like Arkangel AI in healthcare, Habi in real estate and Grupo Nutresa illustrate its growing role. However, nine out of ten SMEs lack formal innovation processes and the country invests less than 0.3% of GDP in R&D, less than half the regional average (0.62%). Recommendations: increase public and private AI-focused R&D investment, foster structured innovation in SMEs, and build strategic academia-industry-government alliances.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "Colombia está construyendo una base sólida de talento en IA: según el ILIA 2024, supera el promedio regional en educación científica temprana, ocupa el tercer lugar en Hispanoamérica en proporción de graduados STEM y está entre los cinco primeros de la región en habilidades de IA, con 11 programas de maestría y un doctorado en IA (Universidad de La Sabana). Iniciativas como los cursos gratuitos del SENA y los 235.000 cupos de SENATIC impulsan la formación continua. Persisten desafíos: el bajo dominio del inglés limita la competitividad global del talento y 8 de cada 10 PYMEs presentan debilidades en la gestión de talento. Recomendaciones: mejorar el dominio del inglés y las habilidades digitales básicas, apoyar el desarrollo de capital humano en PYMEs y ampliar la formación continua en IA.",
+          en: "Colombia is building a solid AI talent pipeline: according to ILIA 2024, it outperforms the regional average in early science education, ranks third in Hispanic America for the share of STEM graduates and is among the top five in the region in AI skills, with 11 master's programs and a PhD in AI (Universidad de La Sabana). Initiatives like SENA's free courses and SENATIC's 235,000 slots drive continuous training. Challenges remain: low English proficiency limits the global competitiveness of its talent and 8 out of 10 SMEs show weaknesses in talent management. Recommendations: improve English and core digital skills, support human capital development in SMEs, and scale up continuous AI training.",
+        },
+      },
+    ],
+    // Colombia: por ahora se publica solo el reporte en inglés (versión ES en revisión con la diseñadora).
+    // Cuando el ES esté corregido: reemplazar el placeholder ai-sprinters-colombia-es.pdf, cambiar downloadUrl a -es.pdf y añadir downloadUrlEn con -en.pdf (dos botones, como Argentina).
+    downloadUrl: "/reports/ai-sprinters-colombia-en.pdf",
+  },
+  {
     id: "ram-camboya",
     title: {
       es: "Evaluación de Preparación en IA: Camboya",
@@ -1627,6 +1712,76 @@ export const reports = [
       },
     ],
     downloadUrl: "/reports/ai-sprinters-argentina-es.pdf",
+  },
+  {
+    slug: "ai-sprinters-colombia",
+    title: {
+      es: "AI Sprinters: Una oportunidad histórica para Colombia",
+      en: "AI Sprinters: A Historic Opportunity for Colombia",
+    },
+    subtitle: {
+      es: "Inteligencia artificial para desatar el potencial económico de Colombia, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence to unlock Colombia's economic potential, part of Google's AI Digital Sprinters series",
+    },
+    client: "Google",
+    year: 2026,
+    featuredStat: {
+      value: "2–3,7%",
+      label: { es: "Del PIB de Colombia podría representar el impacto económico de la IA", en: "Of Colombia's GDP could represent AI's economic impact" },
+    },
+    executiveSummary: {
+      es: "Al analizar la matriz productiva de Colombia, se estima que la IA podría generar entre USD 7.203 y USD 13.599 millones anuales, equivalentes al 2% y 3,7% del PIB. Los sectores con mayor impacto proyectado son la manufactura (USD 886–1.658 millones) y el comercio (USD 832–1.520 millones), seguidos por la enseñanza, la agricultura y las actividades inmobiliarias. Sin embargo, considerando la tasa de adopción actual cercana al 21% según el Ministerio de Ciencia, el impacto estimado se reduce a un rango de USD 1.513 a 2.856 millones anuales. Colombia cuenta con un sólido marco institucional —incluida la Política Nacional de IA actualizada por el CONPES en febrero de 2025— y un ecosistema de innovación prometedor, aunque persisten brechas en conectividad territorial, inversión en I+D e inglés. Este reporte es parte de la serie IA Digital Sprinters de Google.",
+      en: "Analyzing Colombia's productive matrix, AI could generate between USD 7.203 and USD 13.599 billion annually, equivalent to 2% and 3.7% of GDP. The sectors with the highest projected impact are manufacturing (USD 886–1.658 million) and trade (USD 832–1.520 million), followed by education, agriculture and real estate. However, considering the current adoption rate of around 21% according to the Ministry of Science, the estimated impact is reduced to a range of USD 1.513 to 2.856 billion annually. Colombia has a strong institutional framework —including the National AI Policy updated by CONPES in February 2025— and a promising innovation ecosystem, although gaps remain in territorial connectivity, R&D investment and English proficiency. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "2–3,7%", label: { es: "Impacto potencial en PIB", en: "Potential GDP Impact" } },
+      { value: "$7–14B", label: { es: "USD millones anuales", en: "USD Billion Annual" } },
+      { value: "21%", label: { es: "Tasa de adopción de IA", en: "AI Adoption Rate" } },
+      { value: "33", label: { es: "Centros de datos", en: "Data Centers" } },
+    ],
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 12 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 11 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 8 },
+      { name: { es: "Agricultura, Ganadería y Pesca", en: "Agriculture, Forestry & Fishing" }, percentage: 8 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 8 },
+      { name: { es: "Servicios Financieros y Seguros", en: "Financial Services & Insurance" }, percentage: 7 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "Colombia cuenta con un sólido marco institucional para el desarrollo y la adopción de la IA, destacándose por su visión estratégica y su alineación con estándares internacionales. La Política Nacional de Transformación Digital e IA (2019) y el Marco Ético (2021, basado en directrices de la OCDE y la UNESCO) sentaron las bases, y en febrero de 2025 el CONPES actualizó la Política Nacional de IA con seis metas para una gobernanza ética. Recomendaciones: implementar la estrategia nacional de IA con una gobernanza clara e indicadores definidos, integrar la IA en los planes sectoriales de desarrollo (educación, salud, agricultura y justicia) y revisar los marcos legales existentes antes de introducir nuevas leyes específicas.",
+          en: "Colombia has a strong institutional framework for AI development and adoption, standing out for its strategic vision and alignment with international standards. The National Digital Transformation and AI Policy (2019) and the Ethical Framework (2021, based on OECD and UNESCO guidelines) laid the foundation, and in February 2025 CONPES updated the National AI Policy with six goals for ethical governance. Recommendations: operationalize the national AI strategy with clear governance and defined KPIs, integrate AI into sectoral development plans (education, health, agriculture and justice), and review existing legal frameworks before introducing new AI-specific laws.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "El desarrollo de la IA en Colombia requiere fortalecer su infraestructura digital, especialmente la conectividad: en 2024 solo el 65,6% de los hogares tenía acceso a internet, con una marcada brecha entre zonas urbanas (72,5%) y rurales (41,9%). En infraestructura tecnológica, el país ocupa el segundo lugar en Hispanoamérica en sistemas de computación de alto rendimiento (11) y el cuarto en la región en centros de datos (33 instalaciones), ubicándose entre los 25 primeros del mundo. Recomendaciones: priorizar el cierre de la brecha digital territorial, fortalecer la infraestructura de centros de datos y servicios en la nube mediante políticas Cloud First, e impulsar ecosistemas de datos abiertos e interoperables.",
+          en: "AI development in Colombia requires strengthening its digital infrastructure, especially connectivity: in 2024 only 65.6% of households had internet access, with a marked gap between urban (72.5%) and rural (41.9%) areas. In technological infrastructure, the country ranks second in Hispanic America in high-performance computing systems (11) and fourth in the region in data centers (33 facilities), placing it among the top 25 globally. Recommendations: prioritize closing the territorial digital divide, strengthen data center and cloud infrastructure through Cloud First policies, and promote open and interoperable data ecosystems.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "El ecosistema de innovación de Colombia muestra señales prometedoras: según el Colombia Tech Report 2024, la IA es el sector más prometedor, con alta adopción entre startups (81% de AdTech, 80% de EnergyTech, 77% de Industria 4.0 y 74% de HealthTech). Casos como Arkangel AI en salud, Habi en el sector inmobiliario y Grupo Nutresa ilustran su rol creciente. Sin embargo, nueve de cada diez PYMEs carecen de procesos formales de innovación y el país invierte menos del 0,3% del PIB en I+D, menos de la mitad del promedio regional (0,62%). Recomendaciones: aumentar la inversión pública y privada en I+D centrada en IA, fomentar la innovación estructurada en PYMEs y construir alianzas estratégicas entre academia, industria y gobierno.",
+          en: "Colombia's innovation ecosystem shows promising signs: according to the Colombia Tech Report 2024, AI is the most promising sector, with high adoption among startups (81% of AdTech, 80% of EnergyTech, 77% of Industry 4.0 and 74% of HealthTech). Cases like Arkangel AI in healthcare, Habi in real estate and Grupo Nutresa illustrate its growing role. However, nine out of ten SMEs lack formal innovation processes and the country invests less than 0.3% of GDP in R&D, less than half the regional average (0.62%). Recommendations: increase public and private AI-focused R&D investment, foster structured innovation in SMEs, and build strategic academia-industry-government alliances.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "Colombia está construyendo una base sólida de talento en IA: según el ILIA 2024, supera el promedio regional en educación científica temprana, ocupa el tercer lugar en Hispanoamérica en proporción de graduados STEM y está entre los cinco primeros de la región en habilidades de IA, con 11 programas de maestría y un doctorado en IA (Universidad de La Sabana). Iniciativas como los cursos gratuitos del SENA y los 235.000 cupos de SENATIC impulsan la formación continua. Persisten desafíos: el bajo dominio del inglés limita la competitividad global del talento y 8 de cada 10 PYMEs presentan debilidades en la gestión de talento. Recomendaciones: mejorar el dominio del inglés y las habilidades digitales básicas, apoyar el desarrollo de capital humano en PYMEs y ampliar la formación continua en IA.",
+          en: "Colombia is building a solid AI talent pipeline: according to ILIA 2024, it outperforms the regional average in early science education, ranks third in Hispanic America for the share of STEM graduates and is among the top five in the region in AI skills, with 11 master's programs and a PhD in AI (Universidad de La Sabana). Initiatives like SENA's free courses and SENATIC's 235,000 slots drive continuous training. Challenges remain: low English proficiency limits the global competitiveness of its talent and 8 out of 10 SMEs show weaknesses in talent management. Recommendations: improve English and core digital skills, support human capital development in SMEs, and scale up continuous AI training.",
+        },
+      },
+    ],
+    downloadUrl: "/reports/ai-sprinters-colombia-en.pdf",
   },
 ];
 
