@@ -889,9 +889,8 @@ export const projects = [
         },
       },
     ],
-    // Colombia: por ahora se publica solo el reporte en inglés (versión ES en revisión con la diseñadora).
-    // Cuando el ES esté corregido: reemplazar el placeholder ai-sprinters-colombia-es.pdf, cambiar downloadUrl a -es.pdf y añadir downloadUrlEn con -en.pdf (dos botones, como Argentina).
-    downloadUrl: "/reports/ai-sprinters-colombia-en.pdf",
+    downloadUrl: "/reports/ai-sprinters-colombia-es.pdf",
+    downloadUrlEn: "/reports/ai-sprinters-colombia-en.pdf",
   },
   {
     id: "ram-camboya",
@@ -1781,7 +1780,7 @@ export const reports = [
         },
       },
     ],
-    downloadUrl: "/reports/ai-sprinters-colombia-en.pdf",
+    downloadUrl: "/reports/ai-sprinters-colombia-es.pdf",
   },
 ];
 
