@@ -125,27 +125,48 @@ export const clientLogos: Record<string, string> = Object.fromEntries(
 
 export const projects = [
   // ── 2025–2026 | En desarrollo ──────────────────────────────────
-  // hidden until client authorization
-  // {
-  //   id: "ballerina-ia-generativa",
-  //   title: {
-  //     es: "Adopción de IA Generativa en Ballerina",
-  //     en: "Generative AI Adoption at Ballerina",
-  //   },
-  //   subtitle: {
-  //     es: "Estrategia e implementación de IA generativa para transformar procesos internos",
-  //     en: "Generative AI strategy and implementation to transform internal processes",
-  //   },
-  //   description: {
-  //     es: "Acompañamiento a Ballerina en la adopción de IA generativa para mejorar sus procesos internos. Diseñamos la estrategia, identificamos casos de uso y apoyamos la implementación.",
-  //     en: "Supporting Ballerina in adopting generative AI to improve their internal processes. We design the strategy, identify use cases, and support implementation.",
-  //   },
-  //   client: "Ballerina",
-  //   year: 2025,
-  //   region: "Chile",
-  //   type: "consulting" as const,
-  //   status: "in_progress" as const,
-  // },
+  {
+    id: "ram-bolivia",
+    title: {
+      es: "Implementación RAM Bolivia",
+      en: "RAM Implementation Bolivia",
+    },
+    subtitle: {
+      es: "Evaluación de preparación en IA mediante la metodología RAM de UNESCO",
+      en: "AI readiness assessment using UNESCO's RAM methodology",
+    },
+    description: {
+      es: "Evaluación de la preparación de Bolivia para la adopción ética y responsable de la IA mediante la metodología RAM de UNESCO. El diagnóstico identifica capacidades, brechas y oportunidades en las cinco dimensiones de la metodología para orientar el diseño de políticas públicas y de una hoja de ruta nacional en inteligencia artificial.",
+      en: "Assessment of Bolivia's readiness for the ethical and responsible adoption of AI using UNESCO's RAM methodology. The assessment identifies capabilities, gaps, and opportunities across the methodology's five dimensions to guide the design of public policies and a national artificial intelligence roadmap.",
+    },
+    client: "UNESCO",
+    year: 2026,
+    region: "Bolivia",
+    type: "assessment",
+    status: "in_progress" as const,
+    parentProject: "ram-unesco",
+  },
+  {
+    id: "ballerina-ia-generativa",
+    title: {
+      es: "Adopción de IA Generativa en Ballerina",
+      en: "Generative AI Adoption at Ballerina",
+    },
+    subtitle: {
+      es: "Estrategia e implementación de IA generativa para transformar procesos internos",
+      en: "Generative AI strategy and implementation to transform internal processes",
+    },
+    description: {
+      es: "Acompañamiento a Ballerina en la adopción de IA generativa para mejorar sus procesos internos. Diseñamos la estrategia, identificamos casos de uso y apoyamos la implementación.",
+      en: "Supporting Ballerina in adopting generative AI to improve their internal processes. We designed the strategy, identified use cases, and supported implementation.",
+    },
+    client: "Ballerina",
+    year: 2025,
+    yearEnd: 2026,
+    region: "Chile",
+    type: "consulting" as const,
+    status: "completed" as const,
+  },
   {
     id: "revision-legislativa-jamaica",
     title: {
@@ -164,7 +185,7 @@ export const projects = [
     year: 2026,
     region: "Jamaica",
     type: "policy",
-    status: "in_progress" as const,
+    status: "completed" as const,
   },
   {
     id: "ilia-2026",
@@ -215,12 +236,12 @@ export const projects = [
       en: "AI Readiness Assessments (RAM) with UNESCO",
     },
     subtitle: {
-      es: "Diagnósticos nacionales de preparación en inteligencia artificial en 8 países de América Latina, el Caribe y Asia-Pacífico",
-      en: "National AI readiness assessments across 8 countries in Latin America, the Caribbean and Asia-Pacific",
+      es: "Diagnósticos nacionales de preparación en inteligencia artificial en 9 países de América Latina, el Caribe y Asia-Pacífico",
+      en: "National AI readiness assessments across 9 countries in Latin America, the Caribbean and Asia-Pacific",
     },
     description: {
-      es: "Foresight ha liderado la implementación de la Metodología de Evaluación de Preparación en IA (RAM) de UNESCO en 8 países: Chile, Camboya, República Dominicana, Cuba, Panamá, El Salvador, Honduras y Guatemala. Este trabajo ha contribuido directamente al diseño de estrategias nacionales de IA en múltiples países.",
-      en: "Foresight has led the implementation of UNESCO's AI Readiness Assessment Methodology (RAM) in 8 countries: Chile, Cambodia, Dominican Republic, Cuba, Panama, El Salvador, Honduras and Guatemala. This work has directly contributed to the design of national AI strategies in multiple countries.",
+      es: "Foresight ha liderado la implementación de la Metodología de Evaluación de Preparación en IA (RAM) de UNESCO en 9 países: Chile, Camboya, República Dominicana, Cuba, Panamá, El Salvador, Honduras, Guatemala y Bolivia. Este trabajo ha contribuido directamente al diseño de estrategias nacionales de IA en múltiples países.",
+      en: "Foresight has led the implementation of UNESCO's AI Readiness Assessment Methodology (RAM) in 9 countries: Chile, Cambodia, Dominican Republic, Cuba, Panama, El Salvador, Honduras, Guatemala and Bolivia. This work has directly contributed to the design of national AI strategies in multiple countries.",
     },
     client: "UNESCO",
     year: 2021,
@@ -230,14 +251,14 @@ export const projects = [
     status: "completed" as const,
     featured: true,
     featuredOrder: 1,
-    featuredStat: { value: "8", label: { es: "Países evaluados", en: "Countries assessed" } },
+    featuredStat: { value: "9", label: { es: "Países evaluados", en: "Countries assessed" } },
     summaryHighlight: {
-      es: "8 países evaluados",
-      en: "8 countries assessed",
+      es: "9 países evaluados",
+      en: "9 countries assessed",
     },
     executiveSummary: {
-      es: "La Metodología de Evaluación de Preparación en IA (RAM) de UNESCO es un marco integral que evalúa las condiciones de un país para adoptar y beneficiarse de la inteligencia artificial. La metodología analiza cinco dimensiones: legal y regulatoria, social y cultural, científica y educativa, económica, y técnica e infraestructura. Foresight ha liderado la implementación de la RAM en 8 países, convirtiéndose en la consultora con más implementaciones a nivel mundial. Nuestros diagnósticos han contribuido directamente al diseño de hojas de ruta nacionales en inteligencia artificial en múltiples países. El proceso incluye investigación documental, consultas con actores clave del ecosistema, mesas redondas multisectoriales y la formulación de recomendaciones accionables de política pública.",
-      en: "UNESCO's AI Readiness Assessment Methodology (RAM) is a comprehensive framework that evaluates a country's conditions for adopting and benefiting from artificial intelligence. The methodology analyzes five dimensions: legal and regulatory, social and cultural, scientific and educational, economic, and technical and infrastructure. Foresight has led the implementation of the RAM in 8 countries, becoming the consultancy with the most implementations worldwide. Our assessments have directly contributed to the design of national AI roadmaps in multiple countries. The process includes desk research, consultations with key ecosystem stakeholders, multisectoral roundtables and the formulation of actionable public policy recommendations.",
+      es: "La Metodología de Evaluación de Preparación en IA (RAM) de UNESCO es un marco integral que evalúa las condiciones de un país para adoptar y beneficiarse de la inteligencia artificial. La metodología analiza cinco dimensiones: legal y regulatoria, social y cultural, científica y educativa, económica, y técnica e infraestructura. Foresight ha liderado la implementación de la RAM en 9 países, convirtiéndose en la consultora con más implementaciones a nivel mundial. Nuestros diagnósticos han contribuido directamente al diseño de hojas de ruta nacionales en inteligencia artificial en múltiples países. El proceso incluye investigación documental, consultas con actores clave del ecosistema, mesas redondas multisectoriales y la formulación de recomendaciones accionables de política pública.",
+      en: "UNESCO's AI Readiness Assessment Methodology (RAM) is a comprehensive framework that evaluates a country's conditions for adopting and benefiting from artificial intelligence. The methodology analyzes five dimensions: legal and regulatory, social and cultural, scientific and educational, economic, and technical and infrastructure. Foresight has led the implementation of the RAM in 9 countries, becoming the consultancy with the most implementations worldwide. Our assessments have directly contributed to the design of national AI roadmaps in multiple countries. The process includes desk research, consultations with key ecosystem stakeholders, multisectoral roundtables and the formulation of actionable public policy recommendations.",
     },
     pillarsTitle: { es: "Dimensiones de la RAM", en: "RAM Dimensions" },
     pillarsSubtitle: { es: "Las cinco dimensiones que evalúa la Metodología de Evaluación de Preparación en IA de UNESCO", en: "The five dimensions assessed by UNESCO's AI Readiness Assessment Methodology" },
