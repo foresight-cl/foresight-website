@@ -117,7 +117,7 @@ export const clients = [
   { name: "Municipalidad de Las Condes", logo: "/images/clients/las-condes.jpg", url: "https://www.lascondes.cl/" },
   { name: "Conecta Logística", logo: "/images/clients/conecta.webp", url: "https://www.conectalogistica.cl/" },
   { name: "Centro de Innovación UC", logo: "/images/clients/centroinnovacion.png", url: "https://centrodeinnovacion.uc.cl/" },
-  { name: "Ballerina", logo: "/images/clients/ballerina.png" },
+  { name: "Ballerina", logo: "/images/clients/ballerina.png", url: "https://www.ballerina.cl/" },
 ];
 
 export const clientLogos: Record<string, string> = Object.fromEntries(
