@@ -24,16 +24,21 @@ export function ClientsSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+          className="flex flex-wrap justify-center gap-6"
         >
+          {/* 2 / 3 / 6 columns; flex-wrap centers an incomplete last row */}
           {clients.map((client, index) => (
-            <ClientLogo
+            <div
               key={client.name}
-              name={client.name}
-              logo={client.logo}
-              url={client.url}
-              delay={index * 0.05}
-            />
+              className="w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(16.666%-1.25rem)]"
+            >
+              <ClientLogo
+                name={client.name}
+                logo={client.logo}
+                url={client.url}
+                delay={index * 0.05}
+              />
+            </div>
           ))}
         </motion.div>
       </div>

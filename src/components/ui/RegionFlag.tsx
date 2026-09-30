@@ -20,6 +20,7 @@ const regionFlagCodes: Record<string, string | null> = {
   "Centroamérica": null,
   "Cuba": "cu",
   "Jamaica": "jm",
+  "Bolivia": "bo",
   "Rep. Dominicana y Uruguay": null,
   "Global": null,
   "Asia-Pacífico": null,
