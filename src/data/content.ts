@@ -249,7 +249,7 @@ export const projects = [
     yearEnd: 2026,
     region: "Global",
     type: "assessment" as const,
-    status: "completed" as const,
+    status: "in_progress" as const,
     featured: true,
     featuredOrder: 1,
     featuredStat: { value: "9", label: { es: "Países evaluados", en: "Countries assessed" } },
