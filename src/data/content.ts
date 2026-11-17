@@ -562,23 +562,86 @@ export const projects = [
   {
     id: "ai-sprinters-el-salvador",
     title: {
-      es: "AI Sprinters: Impacto de la IA en El Salvador",
-      en: "AI Sprinters: AI Impact in El Salvador",
+      es: "AI Sprinters: La experiencia de El Salvador",
+      en: "AI Sprinters: The Experience of El Salvador",
     },
     subtitle: {
-      es: "Evaluación del impacto económico de la IA y documentación de casos de éxito en El Salvador, parte de la serie AI Digital Sprinters de Google",
-      en: "Assessment of AI's economic impact and documentation of success cases in El Salvador, part of Google's AI Digital Sprinters series",
+      es: "Inteligencia artificial para el desarrollo, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence for development, part of Google's AI Digital Sprinters series",
     },
     description: {
-      es: "Evaluación del impacto económico de la IA y documentación de casos de éxito de uso de IA en El Salvador, parte de la serie AI Digital Sprinters de Google.",
-      en: "Assessment of AI's economic impact and documentation of successful AI use cases in El Salvador, part of Google's AI Digital Sprinters series.",
+      es: "Estudio de impacto económico y casos de uso de la IA en El Salvador, parte de la serie AI Digital Sprinters de Google. Se estima que la IA podría generar entre USD 657 y USD 1.229 millones anuales, equivalentes al 2,1% y 3,9% del PIB.",
+      en: "AI economic impact study and use cases for El Salvador, part of Google's AI Digital Sprinters series. AI could generate between USD 657 million and USD 1.2 billion annually, equivalent to 2.1% and 3.9% of GDP.",
     },
     client: "Google",
     year: 2026,
     region: "El Salvador",
     type: "research" as const,
-    status: "in_progress" as const,
+    status: "completed" as const,
     parentProject: "ai-sprinters",
+    featuredStat: {
+      value: "2,1–3,9%",
+      label: { es: "Del PIB de El Salvador podría representar el impacto económico de la IA", en: "Of El Salvador's GDP could represent AI's economic impact" },
+    },
+    summaryHighlight: {
+      es: "La IA podría generar entre USD 657 y USD 1.229 millones anuales, equivalentes al 2,1% y 3,9% del PIB",
+      en: "AI could generate between USD 657 million and USD 1.2 billion annually, equivalent to 2.1% and 3.9% of GDP",
+    },
+    executiveSummary: {
+      es: "Al analizar la matriz productiva de El Salvador, se estima que la IA podría generar entre USD 657 y USD 1.229 millones anuales, equivalentes al 2,1% y 3,9% del PIB de 2022. Los sectores con mayor potencial son la manufactura (USD 103–191 millones), las actividades financieras y de seguros (USD 87–155 millones) y el comercio (USD 82–152 millones). Como no existen instrumentos específicos para medir la adopción, el reporte supone una tasa del 9,1%, equivalente al promedio de Hispanoamérica, con lo que el impacto actual de la IA estaría entre USD 60 y USD 112 millones anuales. El país cuenta con un marco regulatorio pro-innovación —la Ley de Fomento a la Inteligencia Artificial y Tecnologías de 2025 creó la Agencia Nacional de Inteligencia Artificial (ANIA)— y con casos concretos de IA en el Estado, desde trámites, salud y agua potable hasta registro civil y defensa pública. El principal desafío es alinear la infraestructura, la innovación y el talento para aprovechar plenamente ese marco. Este reporte es parte de la serie AI Digital Sprinters de Google.",
+      en: "Analyzing El Salvador's productive matrix, AI could generate between USD 657 million and USD 1.2 billion annually, equivalent to 2.1% and 3.9% of 2022 GDP. The sectors with the highest potential are manufacturing (USD 103–191 million), financial and insurance activities (USD 87–155 million) and trade (USD 82–152 million). Since there are no specific instruments to measure adoption, the report assumes a 9.1% rate, equivalent to the Hispanic American average, which puts AI's current impact between USD 60 and USD 112 million annually. The country has a pro-innovation regulatory framework —the 2025 Law for the Promotion of AI and Technology created the National AI Agency (ANIA)— and concrete cases of AI in government, from public procedures, health and drinking water to the civil registry and public defense. The main challenge is to align infrastructure, innovation and talent to fully leverage that framework. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "$0,7–1,2B", label: { es: "USD anuales de impacto potencial", en: "USD annual potential impact" } },
+      { value: "0,14%", label: { es: "Del PIB invertido en I+D", en: "Of GDP invested in R&D" } },
+      { value: "10.000", label: { es: "Becas de formación digital Google Cloud–BID", en: "Google Cloud–IDB digital skills scholarships" } },
+    ],
+    pillarsTitle: { es: "Factores Habilitantes", en: "Enabling Factors" },
+    pillarsSubtitle: { es: "Áreas clave del marco Digital Sprinters de Google", en: "Key areas of Google's Digital Sprinters framework" },
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 16 },
+      { name: { es: "Servicios Financieros y Seguros", en: "Financial Services & Insurance" }, percentage: 13 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 12 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 7 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 6 },
+      { name: { es: "Administración Pública y Defensa", en: "Public Administration & Defense" }, percentage: 6 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "En febrero de 2025, El Salvador aprobó la Ley de Fomento a la Inteligencia Artificial y Tecnologías, que creó la ANIA y un Registro Nacional que otorga beneficios a quienes cumplan estándares técnicos y éticos. La ley apuesta por el pragmatismo regulatorio e incluye un periodo de gracia para que empresas y desarrolladores prueben sus soluciones en el mundo real. Se complementa con la Ley de Fomento a la Innovación y Manufactura de Tecnologías (2023), que otorga exenciones tributarias, y con la Ley General para la Modernización Digital del Estado. Casos como el Diagramador de Procesos del Organismo de Mejora Regulatoria —que ha permitido simplificar 1.706 trámites— y la gestión inteligente del tránsito del MOPT muestran la IA aplicada a la gestión pública. Recomendaciones: consolidar el enfoque pragmático y pro-innovación mediante un diálogo multiactor, asegurar la continuidad de los incentivos fiscales relacionados con la IA y aprovechar el entorno regulatorio favorable para atraer capital humano avanzado.",
+          en: "In February 2025, El Salvador passed the Law for the Promotion of AI and Technology, which created ANIA and a National Registry that grants benefits to those who meet technical and ethical standards. The law is grounded in regulatory pragmatism and includes a grace period so companies and developers can test their solutions in the real world. It is complemented by the 2023 Law for the Promotion of Innovation and Manufacturing Technologies, which grants tax exemptions, and the General Law for the Digital Modernization of the State. Cases such as the Regulatory Improvement Agency's AI Process Diagrammer —which has helped simplify 1,706 procedures— and the Ministry of Public Works' smart traffic management show AI applied to public management. Recommendations: consolidate the pragmatic, pro-innovation approach through multi-stakeholder dialogue, ensure continuity of AI-related tax incentives, and leverage the favorable regulatory environment to attract advanced human capital.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "El uso de Internet pasó de cerca del 34% en 2017 al 66,5% en 2024, pero la brecha urbano-rural persiste: solo el 37% de los hogares tiene acceso a Internet (51,2% urbano frente a 13% rural). La inversión privada impulsa la expansión, con el Altius Tech Park, primer centro de datos Tier III del país (USD 70 millones), y el sector público invierte en infraestructura de datos y transformación digital con apoyo del BID. La alianza con Google de 2023 dio origen a casos como DoctorSV, plataforma de telemedicina que usa Gemini para el triaje; el Ministerio de Hacienda aplica IA a la auditoría fiscal; el Ministerio de Vivienda redujo el análisis de casos de cuatro horas a unos 30 minutos; y ANDA usa IA para monitorear el flujo de agua y anticipar fallas. Recomendaciones: profundizar la adopción de infraestructura en la nube en instituciones públicas, ampliar las alianzas público-privadas para infraestructura digital y expandir el uso de IA en agencias públicas, especialmente en salud y educación.",
+          en: "Internet use rose from about 34% in 2017 to 66.5% in 2024, but the urban-rural gap persists: only 37% of households have internet access (51.2% urban vs. 13% rural). Private investment is driving expansion, with Altius Tech Park, the country's first Tier III data center (USD 70 million), while the public sector invests in data infrastructure and digital transformation with IDB support. The 2023 partnership with Google led to cases such as DoctorSV, a telemedicine platform that uses Gemini for triage; the Ministry of Finance applies AI to tax auditing; the Ministry of Housing cut case analysis from four hours to about 30 minutes; and ANDA uses AI to monitor water flow and anticipate failures. Recommendations: deepen the adoption of cloud infrastructure across public institutions, expand public–private partnerships for digital infrastructure, and scale the use of AI across public agencies, particularly in healthcare and education.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "El ecosistema de innovación en IA sigue siendo incipiente: el gasto en I+D representa el 0,14% del PIB, cerca de una cuarta parte del promedio regional, y a septiembre de 2024 la CEPAL identificó siete empresas que desarrollan actividades de IA en el país. Se están sentando bases, como el Centro de Innovación en Emprendimiento Digital (CIED), inaugurado en diciembre de 2024 con el PNUD y KOICA, y alianzas como ConnectAmericas del BID con Google. En el sector público, el Registro Nacional de Personas Naturales usó IA para digitalizar cerca de 18 millones de imágenes de registros civiles, reduciendo hasta en 90% el tiempo de ejecución, y la Procuraduría General desarrolló Procurador IA, que reduce de cinco horas a 15–20 minutos el análisis de un caso. Recomendaciones: impulsar proyectos piloto en sectores estratégicos, fortalecer al CIED como hub de innovación en IA y escalar las iniciativas de apoyo a emprendimientos basados en IA.",
+          en: "The AI innovation ecosystem is still nascent: R&D spending accounts for 0.14% of GDP, about a quarter of the regional average, and as of September 2024 ECLAC identified seven companies engaged in AI-related activities in the country. Foundations are being laid, such as the Center for Innovation in Digital Entrepreneurship (CIED), opened in December 2024 with UNDP and KOICA, and partnerships like the IDB's ConnectAmericas with Google. In the public sector, the National Registry of Natural Persons used AI to digitize about 18 million civil registry images, cutting execution time by up to 90%, and the Attorney General's Office developed Procurador IA, which reduces case analysis from five hours to 15–20 minutes. Recommendations: promote pilot projects in strategic sectors, strengthen CIED as a hub for AI innovation, and scale support initiatives for AI-driven entrepreneurship.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "El Salvador está dando pasos iniciales para fortalecer su base de talento en IA: la Universidad Don Bosco y el ISEADE-FEPADE ofrecen maestrías en IA, aunque el país necesita ampliar sus capacidades de investigación y su mano de obra calificada. La ANIA impulsa CUBO AI, un programa intensivo de seis meses con mentorías de ingenieros y fundadores de empresas de IA, y ARK Educate integró IA y robótica al currículo de 50 escuelas públicas, beneficiando en su piloto a más de 2.800 estudiantes y 100 docentes. Además, Google Cloud y el BID otorgarán 10.000 becas en IA generativa, ciberseguridad, análisis de datos y nube, y el sistema educativo avanza con un tutor de IA a escala nacional y Google Workspace for Education. Recomendaciones: lanzar un Plan Nacional de Recapacitación en IA con niveles escalonados de formación, incentivar programas de grado en TIC en regiones prioritarias y escalar la formación en IA orientada a emprendedores.",
+          en: "El Salvador is taking initial steps to strengthen its AI talent base: Universidad Don Bosco and ISEADE-FEPADE offer master's programs in AI, although the country needs to expand its research capacity and skilled workforce. ANIA runs CUBO AI, an intensive six-month program with mentorship from engineers and founders of AI companies, and ARK Educate integrated AI and robotics into the curriculum of 50 public schools, benefiting more than 2,800 students and 100 teachers in its pilot. In addition, Google Cloud and the IDB will grant 10,000 scholarships in generative AI, cybersecurity, data analytics and cloud, and the education system is moving forward with a nationwide AI tutor and Google Workspace for Education. Recommendations: launch a National AI Reskilling Plan with tiered training levels, promote ICT degree programs in priority regions, and scale AI training programs for entrepreneurs.",
+        },
+      },
+    ],
+    downloadUrl: "/reports/ai-sprinters-el-salvador-es.pdf",
+    downloadUrlEn: "/reports/ai-sprinters-el-salvador-en.pdf",
   },
   {
     id: "ai-sprinters-chile",
@@ -1803,6 +1866,76 @@ export const reports = [
       },
     ],
     downloadUrl: "/reports/ai-sprinters-colombia-es.pdf",
+  },
+  {
+    slug: "ai-sprinters-el-salvador",
+    title: {
+      es: "AI Sprinters: La experiencia de El Salvador",
+      en: "AI Sprinters: The Experience of El Salvador",
+    },
+    subtitle: {
+      es: "Inteligencia artificial para el desarrollo, parte de la serie AI Digital Sprinters de Google",
+      en: "Artificial intelligence for development, part of Google's AI Digital Sprinters series",
+    },
+    client: "Google",
+    year: 2026,
+    featuredStat: {
+      value: "2,1–3,9%",
+      label: { es: "Del PIB de El Salvador podría representar el impacto económico de la IA", en: "Of El Salvador's GDP could represent AI's economic impact" },
+    },
+    executiveSummary: {
+      es: "Al analizar la matriz productiva de El Salvador, se estima que la IA podría generar entre USD 657 y USD 1.229 millones anuales, equivalentes al 2,1% y 3,9% del PIB de 2022. Los sectores con mayor potencial son la manufactura (USD 103–191 millones), las actividades financieras y de seguros (USD 87–155 millones) y el comercio (USD 82–152 millones). Como no existen instrumentos específicos para medir la adopción, el reporte supone una tasa del 9,1%, equivalente al promedio de Hispanoamérica, con lo que el impacto actual de la IA estaría entre USD 60 y USD 112 millones anuales. El país cuenta con un marco regulatorio pro-innovación —la Ley de Fomento a la Inteligencia Artificial y Tecnologías de 2025 creó la Agencia Nacional de Inteligencia Artificial (ANIA)— y con casos concretos de IA en el Estado, desde trámites, salud y agua potable hasta registro civil y defensa pública. El principal desafío es alinear la infraestructura, la innovación y el talento para aprovechar plenamente ese marco. Este reporte es parte de la serie AI Digital Sprinters de Google.",
+      en: "Analyzing El Salvador's productive matrix, AI could generate between USD 657 million and USD 1.2 billion annually, equivalent to 2.1% and 3.9% of 2022 GDP. The sectors with the highest potential are manufacturing (USD 103–191 million), financial and insurance activities (USD 87–155 million) and trade (USD 82–152 million). Since there are no specific instruments to measure adoption, the report assumes a 9.1% rate, equivalent to the Hispanic American average, which puts AI's current impact between USD 60 and USD 112 million annually. The country has a pro-innovation regulatory framework —the 2025 Law for the Promotion of AI and Technology created the National AI Agency (ANIA)— and concrete cases of AI in government, from public procedures, health and drinking water to the civil registry and public defense. The main challenge is to align infrastructure, innovation and talent to fully leverage that framework. This report is part of Google's AI Digital Sprinters series.",
+    },
+    keyStats: [
+      { value: "2,1–3,9%", label: { es: "Impacto potencial en PIB", en: "Potential GDP Impact" } },
+      { value: "$0,7–1,2B", label: { es: "USD anuales de impacto potencial", en: "USD annual potential impact" } },
+      { value: "0,14%", label: { es: "Del PIB invertido en I+D", en: "Of GDP invested in R&D" } },
+      { value: "10.000", label: { es: "Becas de formación digital Google Cloud–BID", en: "Google Cloud–IDB digital skills scholarships" } },
+    ],
+    sectors: [
+      { name: { es: "Manufactura", en: "Manufacturing" }, percentage: 16 },
+      { name: { es: "Servicios Financieros y Seguros", en: "Financial Services & Insurance" }, percentage: 13 },
+      { name: { es: "Comercio", en: "Commerce" }, percentage: 12 },
+      { name: { es: "Enseñanza", en: "Education" }, percentage: 7 },
+      { name: { es: "Actividades Inmobiliarias", en: "Real Estate" }, percentage: 6 },
+      { name: { es: "Administración Pública y Defensa", en: "Public Administration & Defense" }, percentage: 6 },
+    ],
+    pillars: [
+      {
+        title: { es: "Políticas Públicas Habilitantes", en: "Enabling Public Policies" },
+        icon: "Scale",
+        content: {
+          es: "En febrero de 2025, El Salvador aprobó la Ley de Fomento a la Inteligencia Artificial y Tecnologías, que creó la ANIA y un Registro Nacional que otorga beneficios a quienes cumplan estándares técnicos y éticos. La ley apuesta por el pragmatismo regulatorio e incluye un periodo de gracia para que empresas y desarrolladores prueben sus soluciones en el mundo real. Se complementa con la Ley de Fomento a la Innovación y Manufactura de Tecnologías (2023), que otorga exenciones tributarias, y con la Ley General para la Modernización Digital del Estado. Casos como el Diagramador de Procesos del Organismo de Mejora Regulatoria —que ha permitido simplificar 1.706 trámites— y la gestión inteligente del tránsito del MOPT muestran la IA aplicada a la gestión pública. Recomendaciones: consolidar el enfoque pragmático y pro-innovación mediante un diálogo multiactor, asegurar la continuidad de los incentivos fiscales relacionados con la IA y aprovechar el entorno regulatorio favorable para atraer capital humano avanzado.",
+          en: "In February 2025, El Salvador passed the Law for the Promotion of AI and Technology, which created ANIA and a National Registry that grants benefits to those who meet technical and ethical standards. The law is grounded in regulatory pragmatism and includes a grace period so companies and developers can test their solutions in the real world. It is complemented by the 2023 Law for the Promotion of Innovation and Manufacturing Technologies, which grants tax exemptions, and the General Law for the Digital Modernization of the State. Cases such as the Regulatory Improvement Agency's AI Process Diagrammer —which has helped simplify 1,706 procedures— and the Ministry of Public Works' smart traffic management show AI applied to public management. Recommendations: consolidate the pragmatic, pro-innovation approach through multi-stakeholder dialogue, ensure continuity of AI-related tax incentives, and leverage the favorable regulatory environment to attract advanced human capital.",
+        },
+      },
+      {
+        title: { es: "Infraestructura", en: "Infrastructure" },
+        icon: "Server",
+        content: {
+          es: "El uso de Internet pasó de cerca del 34% en 2017 al 66,5% en 2024, pero la brecha urbano-rural persiste: solo el 37% de los hogares tiene acceso a Internet (51,2% urbano frente a 13% rural). La inversión privada impulsa la expansión, con el Altius Tech Park, primer centro de datos Tier III del país (USD 70 millones), y el sector público invierte en infraestructura de datos y transformación digital con apoyo del BID. La alianza con Google de 2023 dio origen a casos como DoctorSV, plataforma de telemedicina que usa Gemini para el triaje; el Ministerio de Hacienda aplica IA a la auditoría fiscal; el Ministerio de Vivienda redujo el análisis de casos de cuatro horas a unos 30 minutos; y ANDA usa IA para monitorear el flujo de agua y anticipar fallas. Recomendaciones: profundizar la adopción de infraestructura en la nube en instituciones públicas, ampliar las alianzas público-privadas para infraestructura digital y expandir el uso de IA en agencias públicas, especialmente en salud y educación.",
+          en: "Internet use rose from about 34% in 2017 to 66.5% in 2024, but the urban-rural gap persists: only 37% of households have internet access (51.2% urban vs. 13% rural). Private investment is driving expansion, with Altius Tech Park, the country's first Tier III data center (USD 70 million), while the public sector invests in data infrastructure and digital transformation with IDB support. The 2023 partnership with Google led to cases such as DoctorSV, a telemedicine platform that uses Gemini for triage; the Ministry of Finance applies AI to tax auditing; the Ministry of Housing cut case analysis from four hours to about 30 minutes; and ANDA uses AI to monitor water flow and anticipate failures. Recommendations: deepen the adoption of cloud infrastructure across public institutions, expand public–private partnerships for digital infrastructure, and scale the use of AI across public agencies, particularly in healthcare and education.",
+        },
+      },
+      {
+        title: { es: "Fomento a la Innovación", en: "Innovation Promotion" },
+        icon: "Lightbulb",
+        content: {
+          es: "El ecosistema de innovación en IA sigue siendo incipiente: el gasto en I+D representa el 0,14% del PIB, cerca de una cuarta parte del promedio regional, y a septiembre de 2024 la CEPAL identificó siete empresas que desarrollan actividades de IA en el país. Se están sentando bases, como el Centro de Innovación en Emprendimiento Digital (CIED), inaugurado en diciembre de 2024 con el PNUD y KOICA, y alianzas como ConnectAmericas del BID con Google. En el sector público, el Registro Nacional de Personas Naturales usó IA para digitalizar cerca de 18 millones de imágenes de registros civiles, reduciendo hasta en 90% el tiempo de ejecución, y la Procuraduría General desarrolló Procurador IA, que reduce de cinco horas a 15–20 minutos el análisis de un caso. Recomendaciones: impulsar proyectos piloto en sectores estratégicos, fortalecer al CIED como hub de innovación en IA y escalar las iniciativas de apoyo a emprendimientos basados en IA.",
+          en: "The AI innovation ecosystem is still nascent: R&D spending accounts for 0.14% of GDP, about a quarter of the regional average, and as of September 2024 ECLAC identified seven companies engaged in AI-related activities in the country. Foundations are being laid, such as the Center for Innovation in Digital Entrepreneurship (CIED), opened in December 2024 with UNDP and KOICA, and partnerships like the IDB's ConnectAmericas with Google. In the public sector, the National Registry of Natural Persons used AI to digitize about 18 million civil registry images, cutting execution time by up to 90%, and the Attorney General's Office developed Procurador IA, which reduces case analysis from five hours to 15–20 minutes. Recommendations: promote pilot projects in strategic sectors, strengthen CIED as a hub for AI innovation, and scale support initiatives for AI-driven entrepreneurship.",
+        },
+      },
+      {
+        title: { es: "Fortalecimiento del Capital Humano", en: "Human Capital Development" },
+        icon: "GraduationCap",
+        content: {
+          es: "El Salvador está dando pasos iniciales para fortalecer su base de talento en IA: la Universidad Don Bosco y el ISEADE-FEPADE ofrecen maestrías en IA, aunque el país necesita ampliar sus capacidades de investigación y su mano de obra calificada. La ANIA impulsa CUBO AI, un programa intensivo de seis meses con mentorías de ingenieros y fundadores de empresas de IA, y ARK Educate integró IA y robótica al currículo de 50 escuelas públicas, beneficiando en su piloto a más de 2.800 estudiantes y 100 docentes. Además, Google Cloud y el BID otorgarán 10.000 becas en IA generativa, ciberseguridad, análisis de datos y nube, y el sistema educativo avanza con un tutor de IA a escala nacional y Google Workspace for Education. Recomendaciones: lanzar un Plan Nacional de Recapacitación en IA con niveles escalonados de formación, incentivar programas de grado en TIC en regiones prioritarias y escalar la formación en IA orientada a emprendedores.",
+          en: "El Salvador is taking initial steps to strengthen its AI talent base: Universidad Don Bosco and ISEADE-FEPADE offer master's programs in AI, although the country needs to expand its research capacity and skilled workforce. ANIA runs CUBO AI, an intensive six-month program with mentorship from engineers and founders of AI companies, and ARK Educate integrated AI and robotics into the curriculum of 50 public schools, benefiting more than 2,800 students and 100 teachers in its pilot. In addition, Google Cloud and the IDB will grant 10,000 scholarships in generative AI, cybersecurity, data analytics and cloud, and the education system is moving forward with a nationwide AI tutor and Google Workspace for Education. Recommendations: launch a National AI Reskilling Plan with tiered training levels, promote ICT degree programs in priority regions, and scale AI training programs for entrepreneurs.",
+        },
+      },
+    ],
+    downloadUrl: "/reports/ai-sprinters-el-salvador-es.pdf",
   },
 ];
 
